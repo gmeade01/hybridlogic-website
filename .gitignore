@@ -1,0 +1,19 @@
+# Dependency directories
+node_modules/
+
+# Firebase Cache & Logs
+.firebase/
+firebase-debug.log
+firebase-debug.*.log
+firestore-debug.log
+ui-debug.log
+
+# Operating System Files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Environment variables & secrets
+.env
+.env.local
+*.secret
