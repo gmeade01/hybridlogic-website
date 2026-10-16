@@ -3,12 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>HYBRID LOGIC // Cloud Swarm Trading Architecture</title>
+  <title>HYBRID LOGIC // Agentic Swarm Trading</title>
   
-  <meta name="description" content="Autonomous cloud swarm architecture for real-time quantitative trading, multi-agent consensus, and deterministic risk execution.">
+  <meta name="description" content="Hybrid Logic — Autonomous cloud swarm architecture for real-time quantitative trading, multi-agent consensus, and deterministic risk execution.">
 
-  <!-- Direct SVG Favicon -->
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%230a0a09'/><circle cx='16' cy='16' r='6' fill='%23c3a072'/><circle cx='16' cy='16' r='12' fill='none' stroke='%23756044' stroke-width='1.5' stroke-dasharray='3 2'/></svg>">
+  <!-- Direct Logo Favicon -->
+  <link rel="icon" type="image/png" href="./assets/logo-mark.png">
 
   <!-- Tailwind CSS Engine -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -16,38 +16,46 @@
   <!-- Lenis Smooth Scroll -->
   <script src="./js/vendor/lenis.min.js"></script>
 
-  <!-- Custom Stylesheet (creamu-inspired aesthetic) -->
+  <!-- Custom Stylesheet (Tuned to Brand Logo) -->
   <link rel="stylesheet" href="./css/styles.css">
 </head>
-<body class="bg-[#0a0a09] text-[#e9e5da] antialiased selection:bg-[#756044] selection:text-[#e9e5da]">
+<body class="bg-[#060b14] text-[#f8fafc] antialiased selection:bg-[#1d4ed8] selection:text-[#f8fafc]">
 
   <!-- ============================================================== -->
   <!-- SITE HEADER (Minimalist Sticky Navigation)                     -->
   <!-- ============================================================== -->
-  <header class="fixed top-0 left-0 w-full z-50 bg-[#0a0a09]/80 backdrop-blur-md border-b border-[#24231f] transition-all">
+  <header class="fixed top-0 left-0 w-full z-50 bg-[#060b14]/85 backdrop-blur-md border-b border-[#142136] transition-all">
     <div class="max-w-7xl mx-auto px-6 md:px-12 h-20 flex items-center justify-between">
       
-      <!-- Brand Logo -->
+      <!-- Brand Logo in Header -->
       <a href="#" class="flex items-center gap-3 text-decoration-none group">
-        <span class="w-2.5 h-2.5 rounded-full bg-[#c3a072] group-hover:scale-125 transition-transform"></span>
-        <span class="font-display font-bold tracking-wider text-sm md:text-base text-[#e9e5da]">HYBRID LOGIC</span>
-        <span class="hidden sm:inline font-mono text-xs text-[#9c978b] tracking-widest">// SWARM_TRADING.v2</span>
+        <img src="./assets/logo-mark.png" alt="Hybrid Logic Logo" class="h-9 w-auto group-hover:scale-105 transition-transform drop-shadow-[0_0_12px_rgba(46,196,182,0.3)]">
+        <div class="flex flex-col">
+          <span class="font-display font-bold tracking-wider text-sm md:text-base text-[#f8fafc] leading-tight">HYBRID LOGIC</span>
+          <span class="font-mono text-[10px] text-[#2ec4b6] tracking-widest leading-none">AGENTIC SWARM TRADING</span>
+        </div>
       </a>
 
       <!-- Desktop Nav Links -->
-      <nav class="hidden lg:flex items-center gap-8 font-mono text-xs text-[#9c978b]">
-        <a href="#philosophy" class="hover:text-[#c3a072] transition-colors">01 / PHILOSOPHY</a>
-        <a href="#architecture" class="hover:text-[#c3a072] transition-colors">02 / ARCHITECTURE</a>
-        <a href="#consensus" class="hover:text-[#c3a072] transition-colors">03 / CONSENSUS</a>
-        <a href="#simulator" class="hover:text-[#c3a072] transition-colors">04 / SIMULATOR</a>
-        <a href="#specs" class="hover:text-[#c3a072] transition-colors">05 / SPECS</a>
+      <nav class="hidden lg:flex items-center gap-8 font-mono text-xs text-[#94a3b8]">
+        <a href="#philosophy" class="hover:text-[#2ec4b6] transition-colors">01 / PHILOSOPHY</a>
+        <a href="#architecture" class="hover:text-[#2ec4b6] transition-colors">02 / ARCHITECTURE</a>
+        <a href="#consensus" class="hover:text-[#2ec4b6] transition-colors">03 / CONSENSUS</a>
+        <a href="#simulator" class="hover:text-[#2ec4b6] transition-colors">04 / SIMULATOR</a>
+        <a href="#specs" class="hover:text-[#2ec4b6] transition-colors">05 / SPECS</a>
       </nav>
 
-      <!-- Action Button -->
-      <a href="mailto:founder@hybridlogic.ai" class="js-email-link btn-pill btn-pill-secondary">
-        <span>TRANSMIT</span>
-        <span class="text-[#c3a072]">&rarr;</span>
-      </a>
+      <!-- Action Button Group -->
+      <div class="flex items-center gap-3">
+        <a href="https://www.linkedin.com/in/gregmeade/" target="_blank" rel="noopener" class="js-linkedin-link hidden sm:inline-flex items-center gap-1.5 font-mono text-xs text-[#94a3b8] hover:text-[#2ec4b6] px-3 py-1.5 transition-colors">
+          <span>LINKEDIN</span>
+          <span class="text-[#2ec4b6]">&nearr;</span>
+        </a>
+        <a href="mailto:founder@hybridlogic.ai" class="js-email-link btn-pill btn-pill-primary">
+          <span>TRANSMIT</span>
+          <span>&rarr;</span>
+        </a>
+      </div>
 
     </div>
   </header>
@@ -65,22 +73,28 @@
     <!-- Hero Content -->
     <div class="relative z-10 max-w-5xl mx-auto text-center space-y-8">
       
-      <!-- Telemetry Badge -->
-      <div class="inline-flex items-center gap-3 px-4 py-1.5 rounded-full bg-[#121210] border border-[#2a2825] font-mono text-xs text-[#c3a072] tracking-wider reveal-on-scroll is-revealed">
-        <span class="w-2 h-2 rounded-full bg-[#c3a072] animate-pulse"></span>
-        <span>DISTRIBUTED CLOUD CONSENSUS</span>
-        <span class="text-[#7a766c]">//</span>
-        <span class="text-[#9c978b]">512 NODES ACTIVE</span>
+      <!-- Brand Logo Emblem -->
+      <div class="flex flex-col items-center justify-center reveal-on-scroll is-revealed">
+        <div class="p-3 rounded-2xl bg-[#0a1220]/80 border border-[#142136] backdrop-blur-md shadow-2xl mb-4">
+          <img src="./assets/logo-mark.png" alt="Hybrid Logic Swarm Network" class="h-14 md:h-16 w-auto drop-shadow-[0_0_24px_rgba(46,196,182,0.4)]">
+        </div>
+        <!-- Telemetry Badge -->
+        <div class="inline-flex items-center gap-3 px-4 py-1.5 rounded-full bg-[#0a1220] border border-[#142136] font-mono text-xs text-[#2ec4b6] tracking-wider">
+          <span class="w-2 h-2 rounded-full bg-[#2ec4b6] animate-pulse"></span>
+          <span>DISTRIBUTED CLOUD CONSENSUS</span>
+          <span class="text-[#64748b]">//</span>
+          <span class="text-[#94a3b8]">512 NODES ACTIVE</span>
+        </div>
       </div>
 
       <!-- Main Headline -->
-      <h1 class="h-hero text-[#e9e5da] tracking-tight reveal-on-scroll is-revealed font-display">
+      <h1 class="h-hero text-[#f8fafc] tracking-tight reveal-on-scroll is-revealed font-display">
         BETWEEN MARKET FLUX<br>
-        <span class="font-editorial italic font-normal text-[#cfc9bb]">AND DETERMINISTIC CONSENSUS.</span>
+        <span class="font-editorial italic font-normal text-[#2ec4b6]">AND DETERMINISTIC CONSENSUS.</span>
       </h1>
 
       <!-- Lead Description -->
-      <p class="lead-text max-w-2xl mx-auto text-[#9c978b] reveal-on-scroll is-revealed">
+      <p class="lead-text max-w-2xl mx-auto text-[#94a3b8] reveal-on-scroll is-revealed">
         Hybrid Logic is an autonomous cloud swarm architecture engineered for high-frequency quantitative trade synthesis, cross-venue order routing, and deterministic risk verification.
       </p>
 
@@ -96,22 +110,22 @@
       </div>
 
       <!-- Key Performance Badges -->
-      <div class="grid grid-cols-2 md:grid-cols-4 gap-6 pt-12 border-t border-[#24231f]/80 max-w-3xl mx-auto font-mono text-left reveal-on-scroll is-revealed">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-6 pt-12 border-t border-[#142136]/80 max-w-3xl mx-auto font-mono text-left reveal-on-scroll is-revealed">
         <div>
-          <div class="text-[11px] text-[#7a766c]">TICK-TO-CONSENSUS</div>
-          <div class="text-lg font-bold text-[#e9e5da]">8.4 ms</div>
+          <div class="text-[11px] text-[#64748b]">TICK-TO-CONSENSUS</div>
+          <div class="text-lg font-bold text-[#f8fafc]">8.4 ms</div>
         </div>
         <div>
-          <div class="text-[11px] text-[#7a766c]">SLIPPAGE DRIFT</div>
-          <div class="text-lg font-bold text-[#c3a072]">0.00% Verified</div>
+          <div class="text-[11px] text-[#64748b]">SLIPPAGE DRIFT</div>
+          <div class="text-lg font-bold text-[#2ec4b6]">0.00% Verified</div>
         </div>
         <div>
-          <div class="text-[11px] text-[#7a766c]">FAULT TOLERANCE</div>
-          <div class="text-lg font-bold text-[#e9e5da]">N/2 + 1 Raft</div>
+          <div class="text-[11px] text-[#64748b]">FAULT TOLERANCE</div>
+          <div class="text-lg font-bold text-[#f8fafc]">N/2 + 1 Raft</div>
         </div>
         <div>
-          <div class="text-[11px] text-[#7a766c]">CROSS-VENUE MESH</div>
-          <div class="text-lg font-bold text-[#e9e5da]">NY4 &bull; FR2 &bull; TY3</div>
+          <div class="text-[11px] text-[#64748b]">CROSS-VENUE MESH</div>
+          <div class="text-lg font-bold text-[#f8fafc]">NY4 &bull; FR2 &bull; TY3</div>
         </div>
       </div>
 
@@ -133,14 +147,14 @@
       <!-- Left Column: Sticky Label -->
       <div class="sec-label-col">
         <span class="sec-tag">01 / PHILOSOPHY</span>
-        <h3 class="font-display text-xl font-bold text-[#e9e5da] mt-3">The Fallacy of Monolithic AI in Financial Markets</h3>
+        <h3 class="font-display text-xl font-bold text-[#f8fafc] mt-3">The Fallacy of Monolithic AI in Financial Markets</h3>
       </div>
 
       <!-- Right Column: Narrative Story -->
       <div class="space-y-8">
         
         <div class="space-y-4">
-          <h2 class="h-xl">Single Models Hallucinate.<br><span class="text-[#c3a072] font-editorial italic font-normal">Swarms Converge.</span></h2>
+          <h2 class="h-xl">Single Models Hallucinate.<br><span class="text-[#2ec4b6] font-editorial italic font-normal">Swarms Converge.</span></h2>
           <p class="lead-text">
             Standard large language models fail catastrophically in high-speed financial regimes. Because they operate sequentially within monotonic attention buffers, subtle probabilistic hallucinations early in market volatility analysis cascade into fatal execution errors by step ten.
           </p>
@@ -149,17 +163,17 @@
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6 pt-4">
           
           <div class="surface-card p-6 md:p-8 space-y-4">
-            <div class="font-mono text-xs text-[#7a766c] uppercase tracking-wider">// MONOLITHIC FRAGILITY</div>
-            <h4 class="h-lg text-[#e9e5da]">The Single-Agent Latency Wall</h4>
-            <p class="text-sm text-[#9c978b] leading-relaxed">
+            <div class="font-mono text-xs text-[#64748b] uppercase tracking-wider">// MONOLITHIC FRAGILITY</div>
+            <h4 class="h-lg text-[#f8fafc]">The Single-Agent Latency Wall</h4>
+            <p class="text-sm text-[#94a3b8] leading-relaxed">
               When one agent is burdened with parsing depth-of-book, evaluating volatility skew, and executing trade orders, inference latency spikes past 800ms. In modern electronic markets, that delay turns profitable alpha into adverse selection.
             </p>
           </div>
 
-          <div class="surface-card p-6 md:p-8 space-y-4 border-[#756044]/40 bg-[#141412]">
-            <div class="font-mono text-xs text-[#c3a072] uppercase tracking-wider">// THE HYBRID LOGIC THESIS</div>
-            <h4 class="h-lg text-[#e9e5da]">Adversarial Swarm Consensus</h4>
-            <p class="text-sm text-[#9c978b] leading-relaxed">
+          <div class="surface-card p-6 md:p-8 space-y-4 border-[#2563eb]/40 bg-[#0d1728]">
+            <div class="font-mono text-xs text-[#2ec4b6] uppercase tracking-wider">// THE HYBRID LOGIC THESIS</div>
+            <h4 class="h-lg text-[#f8fafc]">Adversarial Swarm Consensus</h4>
+            <p class="text-sm text-[#94a3b8] leading-relaxed">
               Hybrid Logic breaks the monolithic bottleneck by deploying hundreds of lightweight, specialized micro-agents across elastic cloud clusters. No trade is ever executed on a single agent's whim; proposals must survive strict adversarial arbitration before atomic market commitment.
             </p>
           </div>
@@ -179,14 +193,14 @@
       <!-- Left Column: Sticky Label -->
       <div class="sec-label-col">
         <span class="sec-tag">02 / ARCHITECTURE</span>
-        <h3 class="font-display text-xl font-bold text-[#e9e5da] mt-3">Distributed Multi-Tier Cloud Topology</h3>
+        <h3 class="font-display text-xl font-bold text-[#f8fafc] mt-3">Distributed Multi-Tier Cloud Topology</h3>
       </div>
 
       <!-- Right Column: Narrative & Architecture Tiers -->
       <div class="space-y-8">
         
         <div class="space-y-4">
-          <h2 class="h-xl">Elastic Kubernetes Clusters.<br><span class="font-editorial italic font-normal text-[#cfc9bb]">Sub-Millisecond WireGuard Fabric.</span></h2>
+          <h2 class="h-xl">Elastic Kubernetes Clusters.<br><span class="font-editorial italic font-normal text-[#2ec4b6]">Sub-Millisecond WireGuard Fabric.</span></h2>
           <p class="lead-text">
             Our cloud swarm operates as an orchestrated mesh deployed across low-latency financial colocation zones (Equinix NY4, Frankfurt FR2, and Tokyo TY3). The architecture separates hypothesis generation from risk arbitration.
           </p>
@@ -198,13 +212,13 @@
           <!-- Tier 1 -->
           <div class="surface-card p-6 md:p-8 flex flex-col md:flex-row gap-6 items-start md:items-center justify-between">
             <div class="space-y-2 max-w-xl">
-              <div class="font-mono text-xs text-[#c3a072]">TIER 01 // INGESTION & FEATURE EXTRACTION</div>
-              <h4 class="text-xl font-bold font-display text-[#e9e5da]">Microstructure Sensing Nodes</h4>
-              <p class="text-sm text-[#9c978b] leading-relaxed">
+              <div class="font-mono text-xs text-[#2ec4b6]">TIER 01 // INGESTION & FEATURE EXTRACTION</div>
+              <h4 class="text-xl font-bold font-display text-[#f8fafc]">Microstructure Sensing Nodes</h4>
+              <p class="text-sm text-[#94a3b8] leading-relaxed">
                 Dedicated micro-agents stream L2/L3 order book feeds, cross-venue depth imbalances, and synthetic order flow toxicity in sub-100 microsecond loops.
               </p>
             </div>
-            <div class="font-mono text-xs text-right text-[#cfc9bb] bg-[#1c1b18] px-4 py-2 rounded-lg border border-[#2a2825] whitespace-nowrap">
+            <div class="font-mono text-xs text-right text-[#cbd5e1] bg-[#0d1728] px-4 py-2 rounded-lg border border-[#142136] whitespace-nowrap">
               <span>96 GPU INGESTION NODES</span>
             </div>
           </div>
@@ -212,27 +226,27 @@
           <!-- Tier 2 -->
           <div class="surface-card p-6 md:p-8 flex flex-col md:flex-row gap-6 items-start md:items-center justify-between">
             <div class="space-y-2 max-w-xl">
-              <div class="font-mono text-xs text-[#c3a072]">TIER 02 // PARALLEL HYPOTHESIS GENERATION</div>
-              <h4 class="text-xl font-bold font-display text-[#e9e5da]">Adversarial Strategy Clusters</h4>
-              <p class="text-sm text-[#9c978b] leading-relaxed">
+              <div class="font-mono text-xs text-[#2ec4b6]">TIER 02 // PARALLEL HYPOTHESIS GENERATION</div>
+              <h4 class="text-xl font-bold font-display text-[#f8fafc]">Adversarial Strategy Clusters</h4>
+              <p class="text-sm text-[#94a3b8] leading-relaxed">
                 Decentralized clusters synthesize competing statistical arbitrage strategies. For every bull hypothesis proposed, an adversarial agent group is spun up to deliberately stress-test and invalidate it.
               </p>
             </div>
-            <div class="font-mono text-xs text-right text-[#cfc9bb] bg-[#1c1b18] px-4 py-2 rounded-lg border border-[#2a2825] whitespace-nowrap">
+            <div class="font-mono text-xs text-right text-[#cbd5e1] bg-[#0d1728] px-4 py-2 rounded-lg border border-[#142136] whitespace-nowrap">
               <span>256 REASONING AGENTS</span>
             </div>
           </div>
 
           <!-- Tier 3 -->
-          <div class="surface-card p-6 md:p-8 flex flex-col md:flex-row gap-6 items-start md:items-center justify-between border-[#756044]/30">
+          <div class="surface-card p-6 md:p-8 flex flex-col md:flex-row gap-6 items-start md:items-center justify-between border-[#2563eb]/40">
             <div class="space-y-2 max-w-xl">
-              <div class="font-mono text-xs text-[#c3a072]">TIER 03 // QUORUM ARBITRATION & RISK LOCKS</div>
-              <h4 class="text-xl font-bold font-display text-[#e9e5da]">Deterministic Execution Gateways</h4>
-              <p class="text-sm text-[#9c978b] leading-relaxed">
+              <div class="font-mono text-xs text-[#2ec4b6]">TIER 03 // QUORUM ARBITRATION & RISK LOCKS</div>
+              <h4 class="text-xl font-bold font-display text-[#f8fafc]">Deterministic Execution Gateways</h4>
+              <p class="text-sm text-[#94a3b8] leading-relaxed">
                 Raft-orchestrated leader nodes verify mathematical risk envelopes (drawdown ceilings, margin thresholds, inventory constraints) before broadcasting atomic orders via direct FIX protocol gateways.
               </p>
             </div>
-            <div class="font-mono text-xs text-right text-[#c3a072] bg-[#756044]/15 px-4 py-2 rounded-lg border border-[#756044]/40 whitespace-nowrap">
+            <div class="font-mono text-xs text-right text-[#2ec4b6] bg-[#2563eb]/20 px-4 py-2 rounded-lg border border-[#2ec4b6]/40 whitespace-nowrap shadow-[0_0_15px_rgba(46,196,182,0.2)]">
               <span>100% QUORUM LOCKED</span>
             </div>
           </div>
@@ -252,14 +266,14 @@
       <!-- Left Column: Sticky Label -->
       <div class="sec-label-col">
         <span class="sec-tag">03 / CONSENSUS ENGINE</span>
-        <h3 class="font-display text-xl font-bold text-[#e9e5da] mt-3">The 4-Step Verification Quorum</h3>
+        <h3 class="font-display text-xl font-bold text-[#f8fafc] mt-3">The 4-Step Verification Quorum</h3>
       </div>
 
       <!-- Right Column: Sequential Pipeline -->
       <div class="space-y-8">
         
         <div class="space-y-4">
-          <h2 class="h-xl">Raft Protocol Meets<br><span class="font-editorial italic font-normal text-[#c3a072]">Formal Financial Invariants.</span></h2>
+          <h2 class="h-xl">Raft Protocol Meets<br><span class="font-editorial italic font-normal text-[#2ec4b6]">Formal Financial Invariants.</span></h2>
           <p class="lead-text">
             How a trade proposal travels from neural market hypothesis to atomic fill without human latency or cognitive bias.
           </p>
@@ -268,33 +282,33 @@
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6 pt-4">
           
           <div class="surface-card p-6 md:p-8 space-y-3">
-            <div class="font-mono text-xs text-[#c3a072]">STEP 01 // DISCOVERY</div>
-            <h4 class="text-lg font-bold text-[#e9e5da]">Multi-Agent Signal Ingestion</h4>
-            <p class="text-xs text-[#9c978b] leading-relaxed">
+            <div class="font-mono text-xs text-[#2ec4b6]">STEP 01 // DISCOVERY</div>
+            <h4 class="text-lg font-bold text-[#f8fafc]">Multi-Agent Signal Ingestion</h4>
+            <p class="text-xs text-[#94a3b8] leading-relaxed">
               Dispersed sensing agents detect mispricing in cross-venue order books and broadcast candidate arbitrage proposals across the internal gossip mesh.
             </p>
           </div>
 
           <div class="surface-card p-6 md:p-8 space-y-3">
-            <div class="font-mono text-xs text-[#c3a072]">STEP 02 // ARBITRATION</div>
-            <h4 class="text-lg font-bold text-[#e9e5da]">Adversarial Fuzzing & Review</h4>
-            <p class="text-xs text-[#9c978b] leading-relaxed">
+            <div class="font-mono text-xs text-[#2ec4b6]">STEP 02 // ARBITRATION</div>
+            <h4 class="text-lg font-bold text-[#f8fafc]">Adversarial Fuzzing & Review</h4>
+            <p class="text-xs text-[#94a3b8] leading-relaxed">
               Audit agents challenge candidate orders against live depth, slippage bounds, and execution fee models to eliminate false positives.
             </p>
           </div>
 
           <div class="surface-card p-6 md:p-8 space-y-3">
-            <div class="font-mono text-xs text-[#c3a072]">STEP 03 // RAFT QUORUM</div>
-            <h4 class="text-lg font-bold text-[#e9e5da]">Mathematical Invariant Verification</h4>
-            <p class="text-xs text-[#9c978b] leading-relaxed">
+            <div class="font-mono text-xs text-[#2ec4b6]">STEP 03 // RAFT QUORUM</div>
+            <h4 class="text-lg font-bold text-[#f8fafc]">Mathematical Invariant Verification</h4>
+            <p class="text-xs text-[#94a3b8] leading-relaxed">
               Consensus requires a two-thirds majority quorum across verification nodes. If any single risk constraint fails, the proposal is killed in under 2ms.
             </p>
           </div>
 
-          <div class="surface-card p-6 md:p-8 space-y-3 border-[#756044]/30 bg-[#141412]">
-            <div class="font-mono text-xs text-[#c3a072]">STEP 04 // DISPATCH</div>
-            <h4 class="text-lg font-bold text-[#e9e5da]">Atomic FIX Protocol Commitment</h4>
-            <p class="text-xs text-[#9c978b] leading-relaxed">
+          <div class="surface-card p-6 md:p-8 space-y-3 border-[#2563eb]/40 bg-[#0d1728]">
+            <div class="font-mono text-xs text-[#2ec4b6]">STEP 04 // DISPATCH</div>
+            <h4 class="text-lg font-bold text-[#f8fafc]">Atomic FIX Protocol Commitment</h4>
+            <p class="text-xs text-[#94a3b8] leading-relaxed">
               Approved orders are signed and routed directly to prime broker DMA endpoints. State ledgers are updated simultaneously across all global clusters.
             </p>
           </div>
@@ -314,45 +328,45 @@
       <!-- Left Column: Sticky Label -->
       <div class="sec-label-col">
         <span class="sec-tag">04 / LIVE SIMULATOR</span>
-        <h3 class="font-display text-xl font-bold text-[#e9e5da] mt-3">Real-Time Swarm Arbitration Console</h3>
+        <h3 class="font-display text-xl font-bold text-[#f8fafc] mt-3">Real-Time Swarm Arbitration Console</h3>
       </div>
 
       <!-- Right Column: Interactive Canvas & Telemetry Stream -->
       <div class="space-y-6">
         
         <div class="space-y-4">
-          <h2 class="h-xl">Inspect Swarm Consensus<br><span class="font-editorial italic font-normal text-[#cfc9bb]">In Dynamic Real Time.</span></h2>
+          <h2 class="h-xl">Inspect Swarm Consensus<br><span class="font-editorial italic font-normal text-[#2ec4b6]">In Dynamic Real Time.</span></h2>
           <p class="lead-text">
             Test the resilience of our distributed multi-cluster trading mesh. Click the injection control below to simulate a sudden market shock across global venues.
           </p>
         </div>
 
         <!-- Simulator Container -->
-        <div class="surface-card p-6 border-[#2a2825] overflow-hidden space-y-4 bg-[#0d0d0c]">
+        <div class="surface-card p-6 border-[#142136] overflow-hidden space-y-4 bg-[#0a1220]">
           
-          <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between pb-3 border-b border-[#24231f] gap-3">
-            <div class="flex items-center gap-2 font-mono text-xs text-[#9c978b]">
-              <span class="w-2 h-2 rounded-full bg-[#c3a072] animate-ping"></span>
+          <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between pb-3 border-b border-[#142136] gap-3">
+            <div class="flex items-center gap-2 font-mono text-xs text-[#94a3b8]">
+              <span class="w-2 h-2 rounded-full bg-[#2ec4b6] animate-ping"></span>
               <span>LIVE_TOPOLOGY // GLOBAL KUBERNETES OVERLAY</span>
             </div>
             
             <button id="btnInjectShock" class="btn-pill btn-pill-primary text-xs py-1.5 px-4">
               <span>INJECT VOLATILITY SHOCK</span>
-              <span class="text-[#756044]">&uarr;</span>
+              <span class="text-[#2ec4b6]">&uarr;</span>
             </button>
           </div>
 
           <!-- Canvas Preview -->
-          <div class="relative w-full rounded-lg overflow-hidden border border-[#24231f] bg-[#080807]">
+          <div class="relative w-full rounded-lg overflow-hidden border border-[#142136] bg-[#060b14]">
             <canvas id="simCanvas" class="w-full h-80 block"></canvas>
           </div>
 
           <!-- Live Terminal Output -->
-          <div class="p-3 bg-black/60 rounded-lg border border-[#24231f] space-y-1">
-            <div class="font-mono text-[10px] text-[#7a766c] uppercase tracking-wider">// REAL-TIME CONSENSUS TELEMETRY STREAM</div>
+          <div class="p-3 bg-black/60 rounded-lg border border-[#142136] space-y-1">
+            <div class="font-mono text-[10px] text-[#64748b] uppercase tracking-wider">// REAL-TIME CONSENSUS TELEMETRY STREAM</div>
             <div id="simLogs" class="space-y-1 font-mono text-xs">
-              <div class="text-[11px] text-[#9c978b]">[12:44:02.102] <span class="text-[#c3a072]">HEARTBEAT:</span> 18/18 consensus nodes synced across NY4, FR2, and TY3.</div>
-              <div class="text-[11px] text-[#9c978b]">[12:44:02.390] <span class="text-[#e9e5da]">RAFT_LEADER:</span> Zero risk drift detected. Holding nominal inventory spread.</div>
+              <div class="text-[11px] text-[#94a3b8]">[12:44:02.102] <span class="text-[#2ec4b6]">HEARTBEAT:</span> 18/18 consensus nodes synced across NY4, FR2, and TY3.</div>
+              <div class="text-[11px] text-[#94a3b8]">[12:44:02.390] <span class="text-[#f8fafc]">RAFT_LEADER:</span> Zero risk drift detected. Holding nominal inventory spread.</div>
             </div>
           </div>
 
@@ -371,49 +385,49 @@
       <!-- Left Column: Sticky Label -->
       <div class="sec-label-col">
         <span class="sec-tag">05 / SPECIFICATIONS</span>
-        <h3 class="font-display text-xl font-bold text-[#e9e5da] mt-3">Low-Level Infrastructure Primitives</h3>
+        <h3 class="font-display text-xl font-bold text-[#f8fafc] mt-3">Low-Level Infrastructure Primitives</h3>
       </div>
 
       <!-- Right Column: Specs Matrix -->
       <div class="space-y-8">
         
         <div class="space-y-4">
-          <h2 class="h-xl">Engineered for Sub-Millisecond<br><span class="font-editorial italic font-normal text-[#c3a072]">Deterministic Execution.</span></h2>
+          <h2 class="h-xl">Engineered for Sub-Millisecond<br><span class="font-editorial italic font-normal text-[#2ec4b6]">Deterministic Execution.</span></h2>
           <p class="lead-text">
             Built from scratch in Rust with zero garbage-collection jitter, lock-free queues, and cross-datacenter memory synchronization.
           </p>
         </div>
 
-        <div class="surface-card divide-y divide-[#24231f] overflow-hidden font-mono text-xs">
+        <div class="surface-card divide-y divide-[#142136] overflow-hidden font-mono text-xs">
           
           <div class="p-5 flex flex-col sm:flex-row justify-between gap-2 items-start sm:items-center">
-            <span class="text-[#7a766c] uppercase">Core Execution Language</span>
-            <span class="text-[#e9e5da] font-bold">Rust (Tokio / Aeron IPC / Lock-free Rings)</span>
+            <span class="text-[#64748b] uppercase">Core Execution Language</span>
+            <span class="text-[#f8fafc] font-bold">Rust (Tokio / Aeron IPC / Lock-free Rings)</span>
           </div>
 
           <div class="p-5 flex flex-col sm:flex-row justify-between gap-2 items-start sm:items-center">
-            <span class="text-[#7a766c] uppercase">Consensus Protocol</span>
-            <span class="text-[#e9e5da] font-bold">High-Throughput Asynchronous Raft (bft-ready)</span>
+            <span class="text-[#64748b] uppercase">Consensus Protocol</span>
+            <span class="text-[#f8fafc] font-bold">High-Throughput Asynchronous Raft (bft-ready)</span>
           </div>
 
           <div class="p-5 flex flex-col sm:flex-row justify-between gap-2 items-start sm:items-center">
-            <span class="text-[#7a766c] uppercase">Tick-To-Trade Verification</span>
-            <span class="text-[#c3a072] font-bold">8.4 ms (99th percentile across 3 venues)</span>
+            <span class="text-[#64748b] uppercase">Tick-To-Trade Verification</span>
+            <span class="text-[#2ec4b6] font-bold">8.4 ms (99th percentile across 3 venues)</span>
           </div>
 
           <div class="p-5 flex flex-col sm:flex-row justify-between gap-2 items-start sm:items-center">
-            <span class="text-[#7a766c] uppercase">Colocation Datacenters</span>
-            <span class="text-[#e9e5da] font-bold">Equinix NY4 (Secaucus), FR2 (Frankfurt), TY3 (Tokyo)</span>
+            <span class="text-[#64748b] uppercase">Colocation Datacenters</span>
+            <span class="text-[#f8fafc] font-bold">Equinix NY4 (Secaucus), FR2 (Frankfurt), TY3 (Tokyo)</span>
           </div>
 
           <div class="p-5 flex flex-col sm:flex-row justify-between gap-2 items-start sm:items-center">
-            <span class="text-[#7a766c] uppercase">Network Fabric</span>
-            <span class="text-[#e9e5da] font-bold">Dedicated Dark Fiber & Kernel-Bypassed WireGuard Mesh</span>
+            <span class="text-[#64748b] uppercase">Network Fabric</span>
+            <span class="text-[#f8fafc] font-bold">Dedicated Dark Fiber & Kernel-Bypassed WireGuard Mesh</span>
           </div>
 
           <div class="p-5 flex flex-col sm:flex-row justify-between gap-2 items-start sm:items-center">
-            <span class="text-[#7a766c] uppercase">Daily Synthetic Liquidity Run</span>
-            <span class="text-[#e9e5da] font-bold">$420M+ Simulated Order Volume</span>
+            <span class="text-[#64748b] uppercase">Daily Synthetic Liquidity Run</span>
+            <span class="text-[#f8fafc] font-bold">$420M+ Simulated Order Volume</span>
           </div>
 
         </div>
@@ -426,20 +440,20 @@
     <!-- ============================================================ -->
     <!-- SECTION 06: TRANSMISSION / FOUNDER CONTACT                    -->
     <!-- ============================================================ -->
-    <section id="contact" class="sec-grid border-b border-[#2a2825]">
+    <section id="contact" class="sec-grid border-b border-[#142136]">
       
       <!-- Left Column: Sticky Label -->
       <div class="sec-label-col">
         <span class="sec-tag">06 / TRANSMISSION</span>
-        <h3 class="font-display text-xl font-bold text-[#e9e5da] mt-3">Founder Dialogue & Collaboration</h3>
+        <h3 class="font-display text-xl font-bold text-[#f8fafc] mt-3">Founder Dialogue & Collaboration</h3>
       </div>
 
       <!-- Right Column: Editorial Contact Monograph -->
       <div class="space-y-8">
         
         <div class="space-y-4">
-          <h2 class="h-xl font-editorial italic font-normal text-[#cfc9bb]">
-            Initiate Dialogue with the <span class="text-[#e9e5da] not-italic font-display font-bold">Architect.</span>
+          <h2 class="h-xl font-editorial italic font-normal text-[#cbd5e1]">
+            Initiate Dialogue with the <span class="text-[#f8fafc] not-italic font-display font-bold">Architect.</span>
           </h2>
           <p class="lead-text">
             Hybrid Logic was built as an advanced research and engineering exploration into autonomous multi-agent consensus for high-speed cloud infrastructure.
@@ -447,26 +461,39 @@
         </div>
 
         <!-- Contact Box -->
-        <div class="surface-card p-8 md:p-12 space-y-6 border-[#756044]/40 bg-[#121210]">
+        <div class="surface-card p-8 md:p-12 space-y-8 border-[#2563eb]/40 bg-[#0a1220]">
           
-          <div class="space-y-2">
-            <div class="font-mono text-xs text-[#c3a072] uppercase tracking-wider">// AVAILABLE FOR ROLES & STRATEGIC ADVISORY</div>
-            <h4 class="text-2xl font-bold font-display text-[#e9e5da]">Let's discuss distributed systems, agentic swarms, and high-frequency architecture.</h4>
-            <p class="text-sm text-[#9c978b] leading-relaxed pt-1">
-              Whether you are an engineering leader evaluating technical capability or an organization exploring autonomous agent infrastructure, direct inquiries are welcome.
-            </p>
+          <div class="flex flex-col md:flex-row gap-6 items-start md:items-center justify-between pb-6 border-b border-[#142136]">
+            <div>
+              <div class="font-mono text-xs text-[#2ec4b6] uppercase tracking-wider">// FOUNDER & ARCHITECT</div>
+              <h4 class="text-2xl md:text-3xl font-bold font-display text-[#f8fafc] mt-1">Greg Meade</h4>
+              <p class="text-sm text-[#94a3b8] leading-relaxed pt-1">
+                Quantitative Systems Architect &bull; Agentic Swarm Engineering &bull; Distributed Cloud Infrastructure
+              </p>
+            </div>
+            <a href="https://www.linkedin.com/in/gregmeade/" target="_blank" rel="noopener" class="js-linkedin-link btn-pill btn-pill-secondary">
+              <span>CONNECT ON LINKEDIN</span>
+              <span class="text-[#2ec4b6]">&nearr;</span>
+            </a>
           </div>
 
-          <!-- Contact Buttons -->
-          <div class="flex flex-wrap gap-4 pt-2">
-            <a href="mailto:founder@hybridlogic.ai" class="js-email-link btn-pill btn-pill-primary">
-              <span>TRANSMIT // EMAIL FOUNDER</span>
-              <span>&rarr;</span>
-            </a>
-            <a href="https://www.linkedin.com" class="js-linkedin-link btn-pill btn-pill-secondary" target="_blank" rel="noopener">
-              <span>VIEW LINKEDIN PROFILE</span>
-              <span class="text-[#c3a072]">&nearr;</span>
-            </a>
+          <div class="space-y-4">
+            <h5 class="text-lg font-bold font-display text-[#f8fafc]">Let's discuss distributed systems, agentic swarms, and high-frequency architecture.</h5>
+            <p class="text-sm text-[#94a3b8] leading-relaxed">
+              Whether you are an engineering leader evaluating technical capability or an organization exploring autonomous agent infrastructure, direct inquiries are welcome.
+            </p>
+
+            <!-- Contact Buttons -->
+            <div class="flex flex-wrap gap-4 pt-2">
+              <a href="mailto:founder@hybridlogic.ai" class="js-email-link btn-pill btn-pill-primary">
+                <span>TRANSMIT // EMAIL GREG</span>
+                <span>&rarr;</span>
+              </a>
+              <a href="https://www.linkedin.com/in/gregmeade/" class="js-linkedin-link btn-pill btn-pill-secondary" target="_blank" rel="noopener">
+                <span>LINKEDIN: /in/gregmeade</span>
+                <span class="text-[#2ec4b6]">&nearr;</span>
+              </a>
+            </div>
           </div>
 
         </div>
@@ -481,16 +508,18 @@
   <!-- ============================================================== -->
   <!-- SITE FOOTER                                                    -->
   <!-- ============================================================== -->
-  <footer class="max-w-7xl mx-auto px-6 md:px-12 py-16 flex flex-col md:flex-row items-center justify-between gap-6 font-mono text-xs text-[#7a766c]">
-    <div>
-      <span>&copy; HYBRID LOGIC // AUTONOMOUS SWARM ARCHITECTURE</span>
+  <footer class="max-w-7xl mx-auto px-6 md:px-12 py-16 flex flex-col md:flex-row items-center justify-between gap-6 font-mono text-xs text-[#64748b]">
+    <div class="flex items-center gap-3">
+      <img src="./assets/logo-mark.png" alt="Hybrid Logic" class="h-6 w-auto opacity-70">
+      <span>&copy; HYBRID LOGIC // AGENTIC SWARM TRADING</span>
     </div>
-    <div class="flex items-center gap-6 text-[#9c978b]">
+    <div class="flex items-center gap-6 text-[#94a3b8]">
       <span class="flex items-center gap-2">
-        <span class="w-1.5 h-1.5 rounded-full bg-[#c3a072]"></span>
+        <span class="w-1.5 h-1.5 rounded-full bg-[#2ec4b6]"></span>
         <span>ALL CLOUD MESH NODES OPERATIONAL</span>
       </span>
-      <a href="#sphereCanvas" class="hover:text-[#c3a072] transition-colors">TOP &uarr;</a>
+      <a href="https://www.linkedin.com/in/gregmeade/" target="_blank" rel="noopener" class="hover:text-[#2ec4b6] transition-colors">LINKEDIN &nearr;</a>
+      <a href="#sphereCanvas" class="hover:text-[#2ec4b6] transition-colors">TOP &uarr;</a>
     </div>
   </footer>
 

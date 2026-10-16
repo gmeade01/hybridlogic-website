@@ -1,7 +1,6 @@
 /**
  * HYBRID LOGIC // Section 04: Interactive Swarm Consensus Simulator
- * Real-time visualization of cloud trading agents executing consensus,
- * order routing, and deterministic risk checks.
+ * Tuned with Brand Logo Palette (Teal, Cyan, Cobalt).
  */
 export class InteractiveSwarmSimulator {
   constructor(canvas) {
@@ -15,9 +14,9 @@ export class InteractiveSwarmSimulator {
     this.logEl = document.getElementById('simLogs');
 
     this.clusters = [
-      { name: "CLUSTER_US_EAST (Equinix NY4)", x: 0.25, y: 0.5, color: "#c3a072" },
-      { name: "CLUSTER_EU_WEST (Frankfurt FR2)", x: 0.50, y: 0.35, color: "#e9e5da" },
-      { name: "CLUSTER_AP_EAST (Tokyo TY3)", x: 0.75, y: 0.55, color: "#9c978b" }
+      { name: "CLUSTER_US_EAST (Equinix NY4)", x: 0.25, y: 0.5, color: "#2ec4b6" },
+      { name: "CLUSTER_EU_WEST (Frankfurt FR2)", x: 0.50, y: 0.35, color: "#2563eb" },
+      { name: "CLUSTER_AP_EAST (Tokyo TY3)", x: 0.75, y: 0.55, color: "#00b4d8" }
     ];
 
     this.init();
@@ -71,7 +70,7 @@ export class InteractiveSwarmSimulator {
     this.log("[MARKET_EVENT] Extreme Volatility Spike injected across cross-venue book: +48.2 bps drift");
     
     // Spawn packets across clusters
-    for (let i = 0; i < 12; i++) {
+    for (let i = 0; i < 14; i++) {
       const fromNode = this.nodes[Math.floor(Math.random() * this.nodes.length)];
       const toNode = this.nodes[Math.floor(Math.random() * this.nodes.length)];
       if (fromNode !== toNode) {
@@ -93,8 +92,8 @@ export class InteractiveSwarmSimulator {
   log(text) {
     if (!this.logEl) return;
     const entry = document.createElement('div');
-    entry.className = "text-[11px] font-mono leading-relaxed py-0.5 border-b border-[#24231f]/60";
-    entry.innerHTML = `<span class="text-[#c3a072]">[${new Date().toISOString().substring(11, 23)}]</span> <span class="text-[#e9e5da]">${text}</span>`;
+    entry.className = "text-[11px] font-mono leading-relaxed py-0.5 border-b border-[#142136]/60";
+    entry.innerHTML = `<span class="text-[#2ec4b6]">[${new Date().toISOString().substring(11, 23)}]</span> <span class="text-[#f8fafc]">${text}</span>`;
     this.logEl.insertBefore(entry, this.logEl.firstChild);
     while (this.logEl.children.length > 5) {
       this.logEl.removeChild(this.logEl.lastChild);
@@ -120,7 +119,7 @@ export class InteractiveSwarmSimulator {
       const cx = cluster.x * this.width;
       const cy = cluster.y * this.height;
 
-      this.ctx.strokeStyle = "rgba(117, 96, 68, 0.25)";
+      this.ctx.strokeStyle = "rgba(46, 196, 182, 0.2)";
       this.ctx.lineWidth = 1;
       this.ctx.setLineDash([4, 4]);
       this.ctx.beginPath();
@@ -128,14 +127,14 @@ export class InteractiveSwarmSimulator {
       this.ctx.stroke();
       this.ctx.setLineDash([]);
 
-      this.ctx.font = "10px sans-serif";
-      this.ctx.fillStyle = "#9c978b";
+      this.ctx.font = "10px monospace";
+      this.ctx.fillStyle = "#94a3b8";
       this.ctx.textAlign = "center";
       this.ctx.fillText(cluster.name, cx, cy - 88);
     }
 
     // Inter-cluster consensus mesh lines
-    this.ctx.strokeStyle = "rgba(42, 40, 37, 0.9)";
+    this.ctx.strokeStyle = "rgba(20, 33, 54, 0.9)";
     this.ctx.lineWidth = 1;
     for (let i = 0; i < this.nodes.length; i++) {
       const a = this.nodes[i];
@@ -158,7 +157,7 @@ export class InteractiveSwarmSimulator {
       const px = pkt.from.x + (pkt.to.x - pkt.from.x) * pkt.progress;
       const py = pkt.from.y + (pkt.to.y - pkt.from.y) * pkt.progress;
 
-      this.ctx.fillStyle = "#c3a072";
+      this.ctx.fillStyle = "#2ec4b6";
       this.ctx.beginPath();
       this.ctx.arc(px, py, 3, 0, Math.PI * 2);
       this.ctx.fill();
@@ -182,13 +181,13 @@ export class InteractiveSwarmSimulator {
       const cluster = this.clusters[node.clusterIndex];
       const pulseSize = Math.sin(node.pulse) * 1.5;
 
-      this.ctx.fillStyle = node.isLeader ? "#e9e5da" : cluster.color;
+      this.ctx.fillStyle = node.isLeader ? "#f8fafc" : cluster.color;
       this.ctx.beginPath();
       this.ctx.arc(node.x, node.y, node.isLeader ? 5.5 + pulseSize : 3.5, 0, Math.PI * 2);
       this.ctx.fill();
 
       if (node.isLeader) {
-        this.ctx.strokeStyle = "rgba(195, 160, 114, 0.6)";
+        this.ctx.strokeStyle = "rgba(46, 196, 182, 0.7)";
         this.ctx.lineWidth = 1.5;
         this.ctx.beginPath();
         this.ctx.arc(node.x, node.y, 10 + pulseSize * 2, 0, Math.PI * 2);

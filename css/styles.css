@@ -1,22 +1,27 @@
 @import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Syne:wght@500;700;800&display=swap');
 
 /* ==============================================================
-   HYBRID LOGIC // Design System (Inspired by aicommon.creamu.co.jp)
-   Warm Japanese Modern Minimalist Palette + Editorial Grid
+   HYBRID LOGIC // Design System (Tuned to Brand Logo)
+   Deep Midnight Navy + Electric Cyan/Teal & Cobalt Accents
    ============================================================== */
 
 :root {
-  --bg: #0a0a09;
-  --ink: #e9e5da;          /* Warm Ivory / Bone */
-  --muted: #9c978b;        /* Stone Taupe */
-  --soft: #cfc9bb;         /* Soft Sand */
-  --note: #7a766c;         /* Subdued Slate */
-  --line: #2a2825;         /* Hairline Border */
-  --line-subtle: #1c1b18;  /* Subtle Separator */
-  --card: #121210;         /* Card Surface */
-  --card-hover: #171614;
-  --accent: #756044;       /* Antique Bronze */
-  --accent-gold: #c3a072;  /* Warm Gold */
+  --bg: #060b14;           /* Deep Midnight Navy Base */
+  --ink: #f8fafc;          /* Starlight Crisp White */
+  --soft: #cbd5e1;         /* Soft Cloud Slate */
+  --muted: #94a3b8;        /* Muted Steel */
+  --note: #64748b;         /* Deep Subdued Slate */
+  
+  --line: #142136;         /* Midnight Hairline Border */
+  --line-subtle: #0f1929;  /* Subtle Separator */
+  --card: #0a1220;         /* Card Surface */
+  --card-hover: #0f1a2e;
+  
+  /* Brand Accents from Logo */
+  --accent-teal: #2ec4b6;   /* Electric Teal / Cyan */
+  --accent-blue: #2563eb;   /* Cobalt Arrow Blue */
+  --accent-cyan: #00b4d8;   /* Sky Cyan Node */
+  --accent-navy: #0f2b59;   /* Deep Brand Navy */
   
   --font-serif: 'Instrument Serif', Georgia, Didot, serif;
   --font-sans: 'Syne', -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
@@ -51,7 +56,7 @@ body {
 
 /* Selection Color */
 ::selection {
-  background: var(--accent);
+  background: var(--accent-blue);
   color: var(--ink);
 }
 
@@ -143,7 +148,7 @@ body {
   font-size: 0.78rem;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: var(--accent-gold);
+  color: var(--accent-teal);
 }
 
 .sec-tag::before {
@@ -151,21 +156,23 @@ body {
   display: inline-block;
   width: 6px;
   height: 6px;
-  background-color: var(--accent-gold);
+  background-color: var(--accent-teal);
   border-radius: 50%;
+  box-shadow: 0 0 8px rgba(46, 196, 182, 0.8);
 }
 
 /* Card Surfaces */
 .surface-card {
   background-color: var(--card);
   border: 1px solid var(--line);
-  border-radius: 14px;
+  border-radius: 16px;
   transition: all 0.35s var(--ease-smooth);
 }
 
 .surface-card:hover {
   background-color: var(--card-hover);
-  border-color: rgba(195, 160, 114, 0.3);
+  border-color: rgba(46, 196, 182, 0.35);
+  box-shadow: 0 12px 36px -8px rgba(6, 11, 20, 0.8), 0 0 20px rgba(46, 196, 182, 0.08);
   transform: translateY(-2px);
 }
 
@@ -198,27 +205,30 @@ body {
 }
 
 .btn-pill-primary {
-  background-color: var(--ink);
-  color: var(--bg);
-  border: 1px solid var(--ink);
+  background: linear-gradient(135deg, #1d4ed8 0%, #0d9488 100%);
+  color: #ffffff;
+  border: 1px solid rgba(46, 196, 182, 0.4);
+  box-shadow: 0 4px 20px rgba(46, 196, 182, 0.25);
 }
 
 .btn-pill-primary:hover {
-  background-color: var(--accent-gold);
-  border-color: var(--accent-gold);
-  color: var(--bg);
+  background: linear-gradient(135deg, #2563eb 0%, #14b8a6 100%);
+  border-color: var(--accent-teal);
+  box-shadow: 0 6px 28px rgba(46, 196, 182, 0.4);
   transform: scale(1.02);
 }
 
 .btn-pill-secondary {
-  background-color: transparent;
+  background-color: rgba(10, 18, 32, 0.6);
   color: var(--ink);
   border: 1px solid var(--line);
+  backdrop-filter: blur(8px);
 }
 
 .btn-pill-secondary:hover {
-  border-color: var(--accent-gold);
-  color: var(--accent-gold);
+  border-color: var(--accent-teal);
+  color: var(--accent-teal);
+  background-color: rgba(15, 26, 46, 0.9);
 }
 
 /* Background Atmosphere */

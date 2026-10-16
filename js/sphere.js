@@ -1,9 +1,7 @@
 /**
  * HYBRID LOGIC // 3D Breathing Swarm Core
- * Inspired by creamu's WebGL / Canvas interactive brown-gold particle sphere.
- * - Parallaxes smoothly with scroll
- * - Responds to mouse velocity & light source
- * - Pauses execution when out of viewport to maximize 60fps performance
+ * Rendered with Brand Logo Palette:
+ * Electric Teal, Sky Cyan, Cobalt Blue, and Crisp White.
  */
 export class BreathingSwarmSphere {
   constructor(canvas) {
@@ -13,8 +11,8 @@ export class BreathingSwarmSphere {
     this.height = canvas.parentElement.clientHeight || window.innerHeight;
 
     this.points = [];
-    this.pointCount = 950;
-    this.radius = Math.min(this.width, this.height) * 0.32;
+    this.pointCount = 980;
+    this.radius = Math.min(this.width, this.height) * 0.33;
 
     this.mouseX = 0;
     this.mouseY = 0;
@@ -34,27 +32,32 @@ export class BreathingSwarmSphere {
     this.resize();
     window.addEventListener('resize', () => this.resize());
 
-    // Generate sphere points using Fibonacci golden spiral for even distribution
+    // Generate sphere points using Fibonacci golden spiral
     this.points = [];
-    const phi = Math.PI * (3 - Math.sqrt(5)); // Golden angle
+    const phi = Math.PI * (3 - Math.sqrt(5));
 
     for (let i = 0; i < this.pointCount; i++) {
-      const y = 1 - (i / (this.pointCount - 1)) * 2; // y goes from 1 to -1
+      const y = 1 - (i / (this.pointCount - 1)) * 2;
       const radiusAtY = Math.sqrt(1 - y * y);
       const theta = phi * i;
 
       const x = Math.cos(theta) * radiusAtY;
       const z = Math.sin(theta) * radiusAtY;
 
+      // Color tags corresponding to logo palette
+      let colorType = "teal";
+      if (i % 3 === 0) colorType = "cobalt";
+      else if (i % 7 === 0) colorType = "cyan";
+      else if (i % 11 === 0) colorType = "white";
+
       this.points.push({
         baseX: x,
         baseY: y,
         baseZ: z,
         x, y, z,
-        size: Math.random() * 1.6 + 0.8,
+        size: Math.random() * 1.8 + 0.8,
         pulseOffset: Math.random() * Math.PI * 2,
-        isGold: i % 4 === 0,
-        isWhite: i % 9 === 0
+        colorType
       });
     }
 
@@ -68,7 +71,7 @@ export class BreathingSwarmSphere {
       this.targetRotX = -this.mouseY * 0.45;
     });
 
-    // Scroll listener for parallax & visibility optimization
+    // Scroll listener for parallax & visibility
     window.addEventListener('scroll', () => {
       this.scrollY = window.scrollY || window.pageYOffset;
       const rect = this.canvas.getBoundingClientRect();
@@ -84,7 +87,7 @@ export class BreathingSwarmSphere {
     this.height = parent ? parent.clientHeight : window.innerHeight;
     this.canvas.width = this.width;
     this.canvas.height = this.height;
-    this.radius = Math.min(this.width, this.height) * 0.34;
+    this.radius = Math.min(this.width, this.height) * 0.35;
   }
 
   render() {
@@ -146,8 +149,7 @@ export class BreathingSwarmSphere {
           z: z2,
           scale,
           size: p.size * scale,
-          isGold: p.isGold,
-          isWhite: p.isWhite
+          colorType: p.colorType
         });
       }
     }
@@ -155,17 +157,22 @@ export class BreathingSwarmSphere {
     // Depth sort
     projected.sort((a, b) => b.z - a.z);
 
-    // Render particles
+    // Screen blend mode for glowing photon aesthetic
+    this.ctx.globalCompositeOperation = 'screen';
+
+    // Render particles matching brand palette
     for (let i = 0; i < projected.length; i++) {
       const p = projected[i];
-      const normZ = (p.z + effectiveRadius) / (effectiveRadius * 2); // 0 (back) to 1 (front)
-      const alpha = Math.max(0.12, Math.min(0.92, normZ * 0.95));
+      const normZ = (p.z + effectiveRadius) / (effectiveRadius * 2);
+      const alpha = Math.max(0.15, Math.min(0.95, normZ * 0.98));
 
-      let color = `rgba(156, 151, 139, ${alpha})`; // Stone taupe (#9c978b)
-      if (p.isGold) {
-        color = `rgba(195, 160, 114, ${alpha * 1.15})`; // Warm bronze-gold (#c3a072 / #756044)
-      } else if (p.isWhite) {
-        color = `rgba(233, 229, 218, ${alpha * 1.3})`; // Ivory bone (#e9e5da)
+      let color = `rgba(46, 196, 182, ${alpha})`; // Teal (#2ec4b6)
+      if (p.colorType === 'cobalt') {
+        color = `rgba(37, 99, 235, ${alpha * 1.1})`; // Cobalt Blue (#2563eb)
+      } else if (p.colorType === 'cyan') {
+        color = `rgba(0, 180, 216, ${alpha * 1.2})`; // Sky Cyan (#00b4d8)
+      } else if (p.colorType === 'white') {
+        color = `rgba(248, 250, 252, ${alpha * 1.35})`; // Crisp White
       }
 
       this.ctx.fillStyle = color;
@@ -173,5 +180,7 @@ export class BreathingSwarmSphere {
       this.ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
       this.ctx.fill();
     }
+
+    this.ctx.globalCompositeOperation = 'source-over';
   }
 }
