@@ -10,7 +10,7 @@ export const CONFIG = {
   // Contact & Socials
   contactEmail: "founder@hybridlogic.ai",
   linkedInUrl: "https://www.linkedin.com/in/gregmeade/",
-  gitHubUrl: "https://github.com",
+  gitHubUrl: "https://github.com/gmeade01/hybridlogic",
   
   // Simulation Tuning
   particleCount: 1000,
