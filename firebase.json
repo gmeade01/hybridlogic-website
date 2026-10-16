@@ -6,7 +6,10 @@
       "**/.*",
       "**/node_modules/**",
       "README.md",
-      "start_preview.bat"
+      "*.bat",
+      "*.cmd",
+      "start_preview.bat",
+      "deploy.bat"
     ],
     "headers": [
       {
