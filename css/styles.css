@@ -1,0 +1,98 @@
+@import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Syne:wght@500;700;800&display=swap');
+
+/* Reset & Foundation */
+*, *::before, *::after {
+  user-select: none;
+  -webkit-user-select: none;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background-color: #040408;
+  color: #e2e8f0;
+  font-family: 'Space Mono', monospace;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Bespoke Typography Stacks */
+.font-editorial {
+  font-family: 'Instrument Serif', Georgia, Didot, "Times New Roman", serif;
+}
+
+.font-display {
+  font-family: 'Syne', -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+.font-code {
+  font-family: 'Space Mono', "JetBrains Mono", Consolas, monospace;
+}
+
+/* Interactive layer control */
+.hud-element {
+  pointer-events: auto;
+}
+
+/* Post-Processing Effects */
+.scanline {
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0),
+    rgba(255, 255, 255, 0) 50%,
+    rgba(0, 0, 0, 0.38) 50%,
+    rgba(0, 0, 0, 0.38)
+  );
+  background-size: 100% 4px;
+}
+
+.vignette {
+  background: radial-gradient(circle at center, transparent 35%, rgba(4, 4, 8, 0.92) 100%);
+}
+
+.ambient-noise {
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.04'/%3E%3C/svg%3E");
+}
+
+/* Giant Kinetic Typography Behind 3D Scene */
+.kinetic-title {
+  font-size: clamp(3.5rem, 15vw, 16rem);
+  line-height: 0.85;
+  letter-spacing: -0.05em;
+  opacity: 0.09;
+  mix-blend-mode: color-dodge;
+  transition: letter-spacing 0.8s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.8s ease;
+}
+
+/* Glass Frosted Drawer */
+.glass-panel {
+  background: rgba(9, 10, 16, 0.76);
+  backdrop-filter: blur(28px);
+  -webkit-backdrop-filter: blur(28px);
+  border-left: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: -20px 0 50px rgba(0, 0, 0, 0.9);
+}
+
+/* Subtle Custom Scrollbar */
+.custom-scroll::-webkit-scrollbar {
+  width: 4px;
+}
+.custom-scroll::-webkit-scrollbar-track {
+  background: transparent;
+}
+.custom-scroll::-webkit-scrollbar-thumb {
+  background: rgba(34, 211, 238, 0.25);
+  border-radius: 2px;
+}
+.custom-scroll::-webkit-scrollbar-thumb:hover {
+  background: rgba(34, 211, 238, 0.5);
+}
+
+/* Magnetic Transition */
+.js-magnetic {
+  transition: transform 0.2s cubic-bezier(0.25, 1, 0.5, 1);
+}
