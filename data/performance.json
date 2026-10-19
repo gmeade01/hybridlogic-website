@@ -1,0 +1,24 @@
+[
+  {
+    "date": "2026-10-19",
+    "timestamp": "2026-10-19T17:02:28.766907+00:00",
+    "metrics": {
+      "totalTrades": 0,
+      "cumulativeAlpha": "+0.00%",
+      "alphaVsSpy": "+0.00%",
+      "spyMultiplier": "1.00x",
+      "sharpeRatio": "N/A (Day 1)",
+      "maxDrawdown": "0.00%",
+      "winRate": "N/A",
+      "avgLatency": "8.4 ms",
+      "status": "FORWARD TRACKING ACTIVE",
+      "lastUpdated": "2026-10-19 17:02 UTC (DAY 1 FORWARD)"
+    },
+    "spy_data": {
+      "current_price": 767.455,
+      "prev_close": 767.455,
+      "daily_return_pct": 0.0
+    },
+    "trade_count": 0
+  }
+]

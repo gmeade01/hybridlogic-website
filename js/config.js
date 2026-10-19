@@ -14,16 +14,17 @@ export const CONFIG = {
   
   // Radical Transparency Performance Metrics (Easily update anytime)
   metrics: {
-    totalTrades: 184920,
-    cumulativeAlpha: "+38.4%",
-    alphaVsSpy: "+24.6%",
-    spyMultiplier: "2.78x",
-    sharpeRatio: "2.86",
-    maxDrawdown: "-4.1%",
-    winRate: "78.4%",
-    avgLatency: "8.4 ms",
-    lastUpdated: "T+0 LIVE"
-  },
+    "totalTrades": 0,
+    "cumulativeAlpha": "+0.00%",
+    "alphaVsSpy": "+0.00%",
+    "spyMultiplier": "1.00x",
+    "sharpeRatio": "N/A (Day 1)",
+    "maxDrawdown": "0.00%",
+    "winRate": "N/A",
+    "avgLatency": "8.4 ms",
+    "status": "FORWARD TRACKING ACTIVE",
+    "lastUpdated": "2026-10-19 17:02 UTC (DAY 1 FORWARD)"
+},
 
   // Simulation Tuning
   particleCount: 1000,
