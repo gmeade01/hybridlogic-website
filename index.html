@@ -130,13 +130,16 @@
       <!-- ============================================================ -->
       <!-- RADICAL TRANSPARENCY // LIVE PERFORMANCE COCKPIT            -->
       <!-- ============================================================ -->
+      <!-- ============================================================ -->
+      <!-- RADICAL TRANSPARENCY // LIVE PERFORMANCE COCKPIT            -->
+      <!-- ============================================================ -->
       <div id="performance" class="pt-10 w-full max-w-5xl mx-auto space-y-4 text-left reveal-on-scroll is-revealed border-t border-[#142136]/80">
         
         <!-- Header Strip -->
         <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 px-1 pt-2">
           <div class="flex items-center gap-2.5 font-mono text-xs text-[#2ec4b6] tracking-wider">
             <span class="w-2 h-2 rounded-full bg-[#2ec4b6] animate-pulse"></span>
-            <span class="font-bold uppercase">RADICAL TRANSPARENCY // REAL-TIME VERIFIED PERFORMANCE</span>
+            <span class="font-bold uppercase">RADICAL TRANSPARENCY // FORWARD TEST INITIATED OCT 19, 2026</span>
           </div>
           <div class="flex items-center gap-2 font-mono text-[11px] text-[#94a3b8]">
             <span class="text-[#64748b]">DMA LOG AUDIT:</span>
@@ -151,20 +154,20 @@
           <!-- Box 1: Total Trades Executed -->
           <div class="metric-box p-5 space-y-3">
             <div class="flex items-center justify-between font-mono text-xs">
-              <span class="text-[#94a3b8] uppercase tracking-wider">TOTAL TRADES</span>
+              <span class="text-[#94a3b8] uppercase tracking-wider">FORWARD TRADES</span>
               <span class="badge-pill bg-[#2ec4b6]/10 text-[#2ec4b6] border border-[#2ec4b6]/30">
                 <span class="w-1.5 h-1.5 rounded-full bg-[#2ec4b6] animate-ping"></span>
-                LIVE
+                DAY 1
               </span>
             </div>
             <div>
-              <div id="metricTotalTrades" class="metric-number text-[#f8fafc]">184,920</div>
+              <div id="metricTotalTrades" class="metric-number text-[#f8fafc]">0</div>
               <div class="text-[11px] font-mono text-[#2ec4b6] mt-1 flex items-center gap-1">
-                <span>&uarr;</span> <span id="metricTradeIncrement">+1 executed just now</span>
+                <span id="metricTradeIncrement">Forward run active &bull; awaiting fill</span>
               </div>
             </div>
             <div class="pt-2 border-t border-[#142136]/80 text-[11px] font-mono text-[#64748b] leading-relaxed">
-              100% autonomous swarm execution &bull; 0 manual intervention
+              Real & paper orders starting 2026-10-19 &bull; 0 backtests
             </div>
           </div>
 
@@ -177,13 +180,13 @@
               </span>
             </div>
             <div>
-              <div id="metricCumulativeAlpha" class="metric-number text-[#f8fafc]">+38.4%</div>
+              <div id="metricCumulativeAlpha" class="metric-number text-[#f8fafc]">+0.00%</div>
               <div class="text-[11px] font-mono text-[#38bdf8] mt-1">
-                <span>Avg 2.84% per rebalance cycle</span>
+                <span>Net of taker fees, gas & slippage</span>
               </div>
             </div>
             <div class="pt-2 border-t border-[#142136]/80 text-[11px] font-mono text-[#64748b] leading-relaxed">
-              Net of all cross-venue taker fees, gas & slippage drift
+              Forward PnL strictly from executions starting today
             </div>
           </div>
 
@@ -192,17 +195,17 @@
             <div class="flex items-center justify-between font-mono text-xs">
               <span class="text-[#94a3b8] uppercase tracking-wider">VS. S&P 500 (SPY)</span>
               <span class="badge-pill bg-[#2ec4b6]/15 text-[#2ec4b6] border border-[#2ec4b6]/30">
-                OUTPERFORM
+                BENCHMARK
               </span>
             </div>
             <div>
-              <div id="metricVsSpy" class="metric-number text-[#2ec4b6]">+24.6%</div>
+              <div id="metricVsSpy" class="metric-number text-[#2ec4b6]">+0.00%</div>
               <div class="text-[11px] font-mono text-[#cbd5e1] mt-1 flex items-center gap-1.5">
-                <span class="text-[#f8fafc] font-bold">2.78x</span> <span>SPY Benchmark (YTD)</span>
+                <span id="metricSpySub" class="text-[#f8fafc] font-bold">1.00x</span> <span>SPY Benchmark Return</span>
               </div>
             </div>
             <div class="pt-2 border-t border-[#142136]/80 text-[11px] font-mono text-[#64748b] leading-relaxed">
-              Market-Neutral Beta: <span class="text-[#cbd5e1]">0.14</span> &bull; Uncorrelated return
+              Market-Neutral Beta &bull; Uncorrelated forward tracking
             </div>
           </div>
 
@@ -211,17 +214,17 @@
             <div class="flex items-center justify-between font-mono text-xs">
               <span class="text-[#94a3b8] uppercase tracking-wider">SHARPE RATIO</span>
               <span class="badge-pill bg-[#0f172a] text-[#cbd5e1] border border-[#1e293b]">
-                MAX DD: -4.1%
+                MAX DD: 0.00%
               </span>
             </div>
             <div>
-              <div id="metricSharpeRatio" class="metric-number text-[#f8fafc]">2.86</div>
+              <div id="metricSharpeRatio" class="metric-number text-[#f8fafc]">N/A (Day 1)</div>
               <div class="text-[11px] font-mono text-[#94a3b8] mt-1">
-                <span>Sortino: 3.48 &bull; Win Rate: 78.4%</span>
+                <span>Calibrating over forward window</span>
               </div>
             </div>
             <div class="pt-2 border-t border-[#142136]/80 text-[11px] font-mono text-[#64748b] leading-relaxed">
-              Max drawdown -4.1% vs. SPY -13.2% benchmark stress
+              Forward risk metrics calibrate across daily close logs
             </div>
           </div>
 
@@ -232,23 +235,17 @@
           <div class="space-y-1">
             <div class="text-[#cbd5e1] font-bold flex items-center gap-2">
               <span class="w-1.5 h-1.5 rounded-full bg-[#2ec4b6]"></span>
-              <span>BENCHMARK TRAJECTORY // CUMULATIVE RETURN NET OF RISK</span>
+              <span>VERIFIED FORWARD EXECUTION LEDGER // OCT 19, 2026 FORWARD</span>
             </div>
             <div class="text-[11px] text-[#94a3b8]">
-              Hybrid Logic Swarm (<span class="text-[#2ec4b6] font-bold">+38.4%</span>) vs. S&P 500 Index (<span class="text-[#64748b]">+13.8%</span>) &bull; Verified colocation telemetry across NY4, FR2, and TY3.
+              All historical backtests have been purged. Metrics are aggregated directly from the MoneyMaker SQLite execution ledger and synced daily at market close.
             </div>
           </div>
           
-          <!-- Mini Horizontal Visual Delta Bar -->
-          <div class="w-full md:w-72 space-y-1.5">
-            <div class="flex justify-between text-[10px] font-mono">
-              <span class="text-[#64748b]">SPY: +13.8%</span>
-              <span class="text-[#2ec4b6] font-bold">HL SWARM: +38.4% (+2.78x)</span>
-            </div>
-            <div class="w-full h-2 rounded-full bg-[#060b14] border border-[#142136] overflow-hidden flex">
-              <div class="h-full bg-[#64748b]" style="width: 36%"></div>
-              <div class="h-full bg-gradient-to-r from-[#2563eb] to-[#2ec4b6]" style="width: 64%"></div>
-            </div>
+          <!-- End-of-day automation tag -->
+          <div class="flex items-center gap-2 px-3 py-1.5 rounded bg-[#060b14] border border-[#142136] text-[11px] font-mono text-[#94a3b8] whitespace-nowrap">
+            <span class="w-1.5 h-1.5 rounded-full bg-[#2ec4b6]"></span>
+            <span>END-OF-DAY CRON: 16:30 EDT</span>
           </div>
         </div>
 

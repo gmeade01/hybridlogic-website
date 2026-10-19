@@ -5,9 +5,8 @@
       "firebase.json",
       "**/.*",
       "**/node_modules/**",
-      "README.md",
-      "*.bat",
-      "*.cmd",
+      "**/*.bat",
+      "**/*.cmd",
       "start_preview.bat",
       "deploy.bat"
     ],
