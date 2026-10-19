@@ -246,3 +246,72 @@ body {
 .hero-canvas-wrap canvas {
   pointer-events: auto;
 }
+
+/* ==============================================================
+   Radical Transparency Performance Metrics Boxes
+   ============================================================== */
+.metric-box {
+  background: rgba(10, 18, 32, 0.75);
+  border: 1px solid rgba(20, 33, 54, 0.95);
+  border-radius: 16px;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  position: relative;
+  overflow: hidden;
+  transition: all 0.35s var(--ease-smooth);
+}
+
+.metric-box::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, rgba(46, 196, 182, 0.6), transparent);
+  opacity: 0;
+  transition: opacity 0.35s ease;
+}
+
+.metric-box:hover {
+  background: rgba(15, 26, 46, 0.9);
+  border-color: rgba(46, 196, 182, 0.45);
+  box-shadow: 0 16px 40px -10px rgba(6, 11, 20, 0.95), 0 0 25px rgba(46, 196, 182, 0.12);
+  transform: translateY(-3px);
+}
+
+.metric-box:hover::before {
+  opacity: 1;
+}
+
+.metric-number {
+  font-size: clamp(2rem, 3.2vw, 2.75rem);
+  font-weight: 700;
+  line-height: 1.05;
+  font-family: var(--font-sans);
+  letter-spacing: -0.03em;
+  color: var(--ink);
+}
+
+.badge-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.25rem 0.65rem;
+  border-radius: 9999px;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+@keyframes tradeTickFlash {
+  0% { color: #2ec4b6; text-shadow: 0 0 14px rgba(46, 196, 182, 0.9); }
+  100% { color: inherit; text-shadow: none; }
+}
+
+.trade-tick-animate {
+  animation: tradeTickFlash 1.2s ease-out;
+}
+

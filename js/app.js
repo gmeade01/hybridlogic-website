@@ -16,6 +16,7 @@ class App {
     this.initSphere();
     this.initSimulator();
     this.initScrollReveals();
+    this.initMetrics();
     this.bindConfig();
   }
 
@@ -89,6 +90,82 @@ class App {
       sec.classList.add('reveal-on-scroll');
       observer.observe(sec);
     });
+  }
+
+  initMetrics() {
+    const metrics = CONFIG.metrics;
+    if (!metrics) return;
+
+    let tradeCount = metrics.totalTrades || 184920;
+    const elTrades = document.getElementById('metricTotalTrades');
+    const elAlpha = document.getElementById('metricCumulativeAlpha');
+    const elVsSpy = document.getElementById('metricVsSpy');
+    const elSharpe = document.getElementById('metricSharpeRatio');
+    const elClock = document.getElementById('metricLiveClock');
+    const elIncrement = document.getElementById('metricTradeIncrement');
+
+    if (elAlpha) elAlpha.innerText = metrics.cumulativeAlpha;
+    if (elVsSpy) elVsSpy.innerText = metrics.alphaVsSpy;
+    if (elSharpe) elSharpe.innerText = metrics.sharpeRatio;
+
+    // Smooth count-up animation for total trades on load
+    if (elTrades) {
+      const duration = 1600;
+      const start = Math.floor(tradeCount * 0.88);
+      const startTime = performance.now();
+
+      const animateCount = (now) => {
+        const progress = Math.min((now - startTime) / duration, 1);
+        const ease = 1 - Math.pow(1 - progress, 3); // cubic ease out
+        const current = Math.floor(start + (tradeCount - start) * ease);
+        elTrades.innerText = current.toLocaleString();
+
+        if (progress < 1) {
+          requestAnimationFrame(animateCount);
+        } else {
+          elTrades.innerText = tradeCount.toLocaleString();
+        }
+      };
+      requestAnimationFrame(animateCount);
+    }
+
+    // Live UTC Clock
+    const updateClock = () => {
+      if (elClock) {
+        const d = new Date();
+        elClock.innerText = d.toISOString().substring(11, 19) + ' UTC';
+      }
+    };
+    updateClock();
+    setInterval(updateClock, 1000);
+
+    // Live Trade Tick Simulator (Increments trades dynamically every 3-6s)
+    let secondsSinceLast = 1;
+    setInterval(() => {
+      secondsSinceLast++;
+      if (elIncrement) {
+        elIncrement.innerText = `+1 executed ${secondsSinceLast}s ago`;
+      }
+    }, 1000);
+
+    const triggerNextTrade = () => {
+      const nextDelay = 3500 + Math.random() * 4500;
+      setTimeout(() => {
+        tradeCount += 1;
+        secondsSinceLast = 0;
+        if (elTrades) {
+          elTrades.innerText = tradeCount.toLocaleString();
+          elTrades.classList.remove('trade-tick-animate');
+          void elTrades.offsetWidth; // trigger reflow
+          elTrades.classList.add('trade-tick-animate');
+        }
+        if (elIncrement) {
+          elIncrement.innerText = '+1 executed just now';
+        }
+        triggerNextTrade();
+      }, nextDelay);
+    };
+    triggerNextTrade();
   }
 
   bindConfig() {
