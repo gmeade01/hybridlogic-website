@@ -67,7 +67,7 @@ export class InteractiveSwarmSimulator {
   }
 
   injectVolatilityShock() {
-    this.log("[MARKET_EVENT] Extreme Volatility Spike injected across cross-venue book: +48.2 bps drift");
+    this.log("[MARKET_EVENT] Volatility shock injected: cross-venue spread widened across Kalshi and Polymarket.");
     
     // Spawn packets across clusters
     for (let i = 0; i < 14; i++) {
@@ -85,7 +85,7 @@ export class InteractiveSwarmSimulator {
     }
 
     setTimeout(() => {
-      this.log("[CONSENSUS] Raft Quorum verified 18/18 consensus in 4.2ms. Arbitrage executed with zero slippage.");
+      this.log("[CONSENSUS] Multi-node quorum confirmed edge in 4.2ms. Arbitrage routed with zero fee drag.");
     }, 450);
   }
 
