@@ -1,6 +1,6 @@
-# HYBRID LOGIC // Autonomous Swarm Architecture
+# STARLING QUANTITATIVE // Autonomous Swarm Architecture
 
-A bespoke, full-screen creative technology web installation built for the **Hybrid Logic** agentic coding swarm project. 
+A bespoke, full-screen creative technology web installation built for the **Starling Quantitative** agentic coding swarm project. 
 
 Engineered with GPU-accelerated 3D mathematical particle swarms, volumetric depth sorting, direct physics manipulation, an ambient generative Web Audio synthesizer, and anti-AI editorial typography.
 
@@ -26,7 +26,7 @@ Open [`js/config.js`](./js/config.js) and update your personal details:
 
 ```javascript
 export const CONFIG = {
-  projectName: "HYBRID LOGIC",
+  projectName: "STARLING QUANTITATIVE",
   tagline: "Autonomous Swarm Architecture",
   
   // Update with your real contact details
@@ -49,13 +49,13 @@ Because this is a zero-dependency static web application, it deploys anywhere in
    ```powershell
    git init
    git add .
-   git commit -m "Initial commit: Hybrid Logic creative installation"
+   git commit -m "Initial commit: Starling Quantitative creative installation"
    git branch -M main
-   git remote add origin https://github.com/<your-username>/hybrid-logic.git
+   git remote add origin https://github.com/<your-username>/starling-quant.git
    git push -u origin main
    ```
 2. In your GitHub repository, go to **Settings** → **Pages** → Source: **Deploy from a branch (`main` / root)**.
-3. Your site is live at `https://<your-username>.github.io/hybrid-logic`. You can attach a custom domain (e.g. `hybridlogic.ai` or `hybridlogic.dev`) with one click in the GitHub Pages settings.
+3. Your site is live at `https://<your-username>.github.io/starling-quant`. You can attach a custom domain (e.g. `starlingquant.com` or `hybridlogic.dev`) with one click in the GitHub Pages settings.
 
 ### Option 2: Vercel
 1. Install or visit [vercel.com](https://vercel.com).

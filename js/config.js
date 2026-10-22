@@ -1,16 +1,16 @@
 /**
- * HYBRID LOGIC // System Configuration
+ * STARLING QUANTITATIVE // System Configuration
  */
 export const CONFIG = {
   // Brand & Meta
-  projectName: "HYBRID LOGIC",
+  projectName: "STARLING QUANTITATIVE",
   tagline: "AGENTIC SWARM TRADING",
   version: "v2.4.0",
   
   // Contact & Socials
-  contactEmail: "founder@hybridlogic.ai",
+  contactEmail: "founder@starlingquant.com",
   linkedInUrl: "https://www.linkedin.com/in/gregmeade/",
-  gitHubUrl: "https://github.com/gmeade01/hybridlogic-website",
+  gitHubUrl: "https://github.com/gmeade01/starlingquant-website",
   
   // Radical Transparency Performance Metrics (Easily update anytime)
   metrics: {

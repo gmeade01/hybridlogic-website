@@ -1,5 +1,5 @@
 """
-HYBRID LOGIC // Automated Daily Performance Telemetry Updater
+STARLING QUANTITATIVE // Automated Daily Performance Telemetry Updater
 Aggregates forward paper and live executions starting Oct 19, 2026.
 Purges backtest artifacts, calculates alpha vs SPY, updates website metrics,
 deploys to Firebase Hosting, and syncs to GitHub.
@@ -251,7 +251,7 @@ def deploy_and_sync():
             timeout=120
         )
         if res.returncode == 0:
-            log("Firebase deployment succeeded: https://hybridlogic.web.app")
+            log("Firebase deployment succeeded: https://starlingquant.com")
         else:
             log(f"Firebase deploy warning: {res.stderr}")
     except Exception as e:

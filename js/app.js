@@ -1,5 +1,5 @@
 /**
- * HYBRID LOGIC // Main Orchestration Engine
+ * STARLING QUANTITATIVE // Main Orchestration Engine
  * - Lenis Smooth Inertial Scrolling
  * - 3D Breathing Swarm Core
  * - Interactive Trading Swarm Simulator
@@ -159,7 +159,7 @@ class App {
     // Email Links
     const emailLinks = document.querySelectorAll('.js-email-link');
     emailLinks.forEach(link => {
-      link.href = `mailto:${CONFIG.contactEmail}?subject=Hybrid%20Logic%20Inquiry`;
+      link.href = `mailto:${CONFIG.contactEmail}?subject=Starling%20Quantitative%20Inquiry`;
     });
 
     // LinkedIn Links

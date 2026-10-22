@@ -1,5 +1,6 @@
 {
   "hosting": {
+    "site": "starlingquant",
     "public": ".",
     "ignore": [
       "firebase.json",

@@ -1,6 +1,6 @@
 # RFC / System Specification: Multi-Agent Swarm Trading Extensions for Prediction Market APIs
 **Document Version:** 1.0.0-PROD  
-**Author:** Hybrid Logic Architecture Team (`founder@hybridlogic.ai`)  
+**Author:** Starling Quantitative Architecture Team (`founder@starlingquant.com`)  
 **Target:** Prediction Market Core Infrastructure (API Gateway, Matching Engine, Risk Daemon, Oracle Bus)  
 **Implementation Guidance for Coding Agents:** Treat this document as an actionable PRD/RFC. All schemas are typed, all matching engine constraints are explicit, and state transition invariants are mathematically bounded.
 
@@ -284,6 +284,6 @@ When building out this API integration layer, coding agents must implement and t
 
 ## 9. Contact & Collaboration
 
-* **Engineering Inquiries:** `founder@hybridlogic.ai`
-* **Architecture Repository:** [https://github.com/gmeade01/hybridlogic-website](https://github.com/gmeade01/hybridlogic-website)
+* **Engineering Inquiries:** `founder@starlingquant.com`
+* **Architecture Repository:** [https://github.com/gmeade01/starlingquant-website](https://github.com/gmeade01/starlingquant-website)
 * **Lead Architect:** Greg Meade ([linkedin.com/in/gregmeade](https://www.linkedin.com/in/gregmeade/))

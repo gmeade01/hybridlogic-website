@@ -1,5 +1,5 @@
 /**
- * HYBRID LOGIC // Dossier Controller
+ * STARLING QUANTITATIVE // Dossier Controller
  * Manages the slide-over specification monograph, keyboard accessibility,
  * camera focal shifts, and transmission link interactions.
  */
@@ -35,7 +35,7 @@ export class DossierController {
     // Populate email links dynamically from config
     const emailLinks = document.querySelectorAll('.js-email-link');
     emailLinks.forEach(link => {
-      link.href = `mailto:${this.config.contactEmail}?subject=Hybrid%20Logic%20Dialogue`;
+      link.href = `mailto:${this.config.contactEmail}?subject=Starling%20Quantitative%20Dialogue`;
     });
   }
 
