@@ -200,7 +200,7 @@ def update_config_js(metrics):
             new_content = re.sub(pattern, lambda m: replacement, content, flags=re.DOTALL)
             with open(CONFIG_JS, "w", encoding="utf-8") as f:
                 f.write(new_content)
-            log("Successfully updated metrics in js/config.js.")
+            starling_cfg = os.path.join(PROJECT_DIR, "starling-site", "js", "config.js"); open(starling_cfg, "w", encoding="utf-8").write(re.sub(pattern, lambda m: replacement, open(starling_cfg, "r", encoding="utf-8").read(), flags=re.DOTALL)) if os.path.exists(starling_cfg) else None; log("Successfully updated metrics in both js/config.js and starling-site/js/config.js.")
             return True
         else:
             log("Error: Could not locate metrics block in js/config.js.")
