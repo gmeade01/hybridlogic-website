@@ -1,5 +1,5 @@
 /**
- * STARLING QUANTITATIVE // 3D Particle Swarm & State Morphing Engine
+ * HYBRID LOGIC // 3D Particle Swarm & State Morphing Engine
  * High-performance 3D perspective engine with additive photon blending.
  */
 export class SwarmEngine {

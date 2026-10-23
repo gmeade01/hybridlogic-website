@@ -1,5 +1,5 @@
 /**
- * STARLING QUANTITATIVE // 3D Breathing Swarm Core
+ * HYBRID LOGIC // 3D Breathing Swarm Core
  * Rendered with Brand Logo Palette:
  * Electric Teal, Sky Cyan, Cobalt Blue, and Crisp White.
  */

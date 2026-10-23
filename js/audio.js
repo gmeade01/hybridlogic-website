@@ -1,5 +1,5 @@
 /**
- * STARLING QUANTITATIVE // Generative Ambient Audio Synthesizer
+ * HYBRID LOGIC // Generative Ambient Audio Synthesizer
  * Built entirely with Web Audio API. Zero external audio assets required.
  */
 export class SoundEngine {

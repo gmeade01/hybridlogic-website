@@ -1,0 +1,317 @@
+@import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Syne:wght@500;700;800&display=swap');
+
+/* ==============================================================
+   STARLING QUANTITATIVE // Design System (Tuned to Brand Logo)
+   Deep Midnight Navy + Electric Cyan/Teal & Cobalt Accents
+   ============================================================== */
+
+:root {
+  --bg: #060b14;           /* Deep Midnight Navy Base */
+  --ink: #f8fafc;          /* Starlight Crisp White */
+  --soft: #cbd5e1;         /* Soft Cloud Slate */
+  --muted: #94a3b8;        /* Muted Steel */
+  --note: #64748b;         /* Deep Subdued Slate */
+  
+  --line: #142136;         /* Midnight Hairline Border */
+  --line-subtle: #0f1929;  /* Subtle Separator */
+  --card: #0a1220;         /* Card Surface */
+  --card-hover: #0f1a2e;
+  
+  /* Brand Accents from Logo */
+  --accent-teal: #2ec4b6;   /* Electric Teal / Cyan */
+  --accent-blue: #2563eb;   /* Cobalt Arrow Blue */
+  --accent-cyan: #00b4d8;   /* Sky Cyan Node */
+  --accent-navy: #0f2b59;   /* Deep Brand Navy */
+  
+  --font-serif: 'Instrument Serif', Georgia, Didot, serif;
+  --font-sans: 'Syne', -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-mono: 'Space Mono', "JetBrains Mono", Consolas, monospace;
+
+  --ease-smooth: cubic-bezier(0.2, 0.7, 0.1, 1);
+}
+
+/* Reset & Foundation */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  background-color: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-sans);
+  font-size: 16px;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--ink);
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* Selection Color */
+::selection {
+  background: var(--accent-blue);
+  color: var(--ink);
+}
+
+/* Typography Hierarchy */
+.font-editorial {
+  font-family: var(--font-serif);
+}
+
+.font-display {
+  font-family: var(--font-sans);
+}
+
+.font-code {
+  font-family: var(--font-mono);
+}
+
+/* Headings */
+.h-hero {
+  font-size: clamp(2.75rem, 7.5vw, 6.5rem);
+  line-height: 1.02;
+  letter-spacing: -0.04em;
+  font-weight: 700;
+  color: var(--ink);
+}
+
+.h-xl {
+  font-size: clamp(2rem, 4.2vw, 3.5rem);
+  line-height: 1.15;
+  letter-spacing: -0.03em;
+  font-weight: 600;
+  color: var(--ink);
+}
+
+.h-lg {
+  font-size: clamp(1.4rem, 2.4vw, 2rem);
+  line-height: 1.25;
+  letter-spacing: -0.02em;
+  font-weight: 600;
+  color: var(--ink);
+}
+
+.lead-text {
+  font-size: clamp(1.05rem, 1.4vw, 1.25rem);
+  line-height: 1.8;
+  color: var(--soft);
+}
+
+/* Section Grid (cream-u style 2-column layout) */
+.sec-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2.5rem;
+  padding: clamp(4rem, 9vw, 8.5rem) 0;
+  border-top: 1px solid var(--line);
+}
+
+@media (min-width: 900px) {
+  .sec-grid {
+    grid-template-columns: 280px minmax(0, 1fr);
+    gap: 4rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  .sec-grid {
+    grid-template-columns: 360px minmax(0, 1fr);
+    gap: 6rem;
+  }
+}
+
+/* Sticky Section Labels on Left */
+.sec-label-col {
+  position: relative;
+}
+
+@media (min-width: 900px) {
+  .sec-label-col {
+    position: sticky;
+    top: 6rem;
+    align-self: start;
+  }
+}
+
+.sec-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent-teal);
+}
+
+.sec-tag::before {
+  content: "";
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  background-color: var(--accent-teal);
+  border-radius: 50%;
+  box-shadow: 0 0 8px rgba(46, 196, 182, 0.8);
+}
+
+/* Card Surfaces */
+.surface-card {
+  background-color: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  transition: all 0.35s var(--ease-smooth);
+}
+
+.surface-card:hover {
+  background-color: var(--card-hover);
+  border-color: rgba(46, 196, 182, 0.35);
+  box-shadow: 0 12px 36px -8px rgba(6, 11, 20, 0.8), 0 0 20px rgba(46, 196, 182, 0.08);
+  transform: translateY(-2px);
+}
+
+/* Scroll-Driven Reveal Animations */
+.reveal-on-scroll {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.85s var(--ease-smooth), transform 0.85s var(--ease-smooth);
+}
+
+.reveal-on-scroll.is-revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Buttons */
+.btn-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.75rem 1.6rem;
+  border-radius: 9999px;
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  transition: all 0.3s var(--ease-smooth);
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.btn-pill-primary {
+  background: linear-gradient(135deg, #1d4ed8 0%, #0d9488 100%);
+  color: #ffffff;
+  border: 1px solid rgba(46, 196, 182, 0.4);
+  box-shadow: 0 4px 20px rgba(46, 196, 182, 0.25);
+}
+
+.btn-pill-primary:hover {
+  background: linear-gradient(135deg, #2563eb 0%, #14b8a6 100%);
+  border-color: var(--accent-teal);
+  box-shadow: 0 6px 28px rgba(46, 196, 182, 0.4);
+  transform: scale(1.02);
+}
+
+.btn-pill-secondary {
+  background-color: rgba(10, 18, 32, 0.6);
+  color: var(--ink);
+  border: 1px solid var(--line);
+  backdrop-filter: blur(8px);
+}
+
+.btn-pill-secondary:hover {
+  border-color: var(--accent-teal);
+  color: var(--accent-teal);
+  background-color: rgba(15, 26, 46, 0.9);
+}
+
+/* Background Atmosphere */
+.hero-canvas-wrap {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.hero-canvas-wrap canvas {
+  pointer-events: auto;
+}
+
+/* ==============================================================
+   Radical Transparency Performance Metrics Boxes
+   ============================================================== */
+.metric-box {
+  background: rgba(10, 18, 32, 0.75);
+  border: 1px solid rgba(20, 33, 54, 0.95);
+  border-radius: 16px;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  position: relative;
+  overflow: hidden;
+  transition: all 0.35s var(--ease-smooth);
+}
+
+.metric-box::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, rgba(46, 196, 182, 0.6), transparent);
+  opacity: 0;
+  transition: opacity 0.35s ease;
+}
+
+.metric-box:hover {
+  background: rgba(15, 26, 46, 0.9);
+  border-color: rgba(46, 196, 182, 0.45);
+  box-shadow: 0 16px 40px -10px rgba(6, 11, 20, 0.95), 0 0 25px rgba(46, 196, 182, 0.12);
+  transform: translateY(-3px);
+}
+
+.metric-box:hover::before {
+  opacity: 1;
+}
+
+.metric-number {
+  font-size: clamp(2rem, 3.2vw, 2.75rem);
+  font-weight: 700;
+  line-height: 1.05;
+  font-family: var(--font-sans);
+  letter-spacing: -0.03em;
+  color: var(--ink);
+}
+
+.badge-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.25rem 0.65rem;
+  border-radius: 9999px;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+@keyframes tradeTickFlash {
+  0% { color: #2ec4b6; text-shadow: 0 0 14px rgba(46, 196, 182, 0.9); }
+  100% { color: inherit; text-shadow: none; }
+}
+
+.trade-tick-animate {
+  animation: tradeTickFlash 1.2s ease-out;
+}
+

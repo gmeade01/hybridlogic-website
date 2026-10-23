@@ -1,5 +1,5 @@
 /**
- * STARLING QUANTITATIVE // Section 04: Interactive Swarm Consensus Simulator
+ * HYBRID LOGIC // Section 04: Interactive Swarm Consensus Simulator
  * Tuned with Brand Logo Palette (Teal, Cyan, Cobalt).
  */
 export class InteractiveSwarmSimulator {

@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>STARLING QUANTITATIVE // Agentic Swarm Trading</title>
+  
+  <meta name="title" content="STARLING QUANTITATIVE // Agentic Swarm Trading">
+  <meta name="description" content="Starling Quantitative — Autonomous cloud murmuration architecture for real-time quantitative trading, multi-agent consensus, and deterministic risk execution.">
+
+  <!-- Open Graph / LinkedIn / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://starlingquant.com/">
+  <meta property="og:title" content="STARLING QUANTITATIVE // Agentic Swarm Trading">
+  <meta property="og:description" content="Autonomous cloud murmuration architecture for real-time quantitative trading, multi-agent consensus, and deterministic risk execution.">
+  <meta property="og:image" content="https://starlingquant.com/assets/og-preview.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="https://starlingquant.com/">
+  <meta name="twitter:title" content="STARLING QUANTITATIVE // Agentic Swarm Trading">
+  <meta name="twitter:description" content="Autonomous cloud murmuration architecture for real-time quantitative trading, multi-agent consensus, and deterministic risk execution.">
+  <meta name="twitter:image" content="https://starlingquant.com/assets/og-preview.png">
+
+  <!-- Direct Logo Favicon -->
+  <link rel="icon" type="image/png" href="./assets/logo-mark.png">
+
+  <!-- Tailwind CSS Engine -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Lenis Smooth Scroll -->
+  <script src="./js/vendor/lenis.min.js"></script>
+
+  <!-- Custom Stylesheet (Tuned to Brand Logo) -->
+  <link rel="stylesheet" href="./css/styles.css">
+</head>
+<body class="bg-[#060b14] text-[#f8fafc] antialiased selection:bg-[#1d4ed8] selection:text-[#f8fafc]">
+
+  <!-- ============================================================== -->
+  <!-- SITE HEADER (Minimalist Sticky Navigation)                     -->
+  <!-- ============================================================== -->
+  <header class="fixed top-0 left-0 w-full z-50 bg-[#060b14]/85 backdrop-blur-md border-b border-[#142136] transition-all">
+    <div class="max-w-7xl mx-auto px-6 md:px-12 h-20 flex items-center justify-between">
+      
+      <!-- Brand Logo in Header -->
+      <a href="#" class="flex items-center gap-3 text-decoration-none group">
+        <img src="./assets/logo-mark.png" alt="Starling Quantitative Logo" class="h-9 w-auto group-hover:scale-105 transition-transform drop-shadow-[0_0_12px_rgba(46,196,182,0.3)]">
+        <div class="flex flex-col">
+          <span class="font-display font-bold tracking-wider text-sm md:text-base text-[#f8fafc] leading-tight">STARLING QUANTITATIVE</span>
+          <span class="font-mono text-[10px] text-[#2ec4b6] tracking-widest leading-none">AGENTIC SWARM TRADING</span>
+        </div>
+      </a>
+
+      <!-- Desktop Nav Links -->
+      <nav class="hidden lg:flex items-center gap-7 font-mono text-xs text-[#94a3b8]">
+        <a href="#performance" class="hover:text-[#2ec4b6] transition-colors text-[#2ec4b6]">00 / PERFORMANCE</a>
+        <a href="#philosophy" class="hover:text-[#2ec4b6] transition-colors">01 / PHILOSOPHY</a>
+        <a href="#architecture" class="hover:text-[#2ec4b6] transition-colors">02 / ARCHITECTURE</a>
+        <a href="#consensus" class="hover:text-[#2ec4b6] transition-colors">03 / CONSENSUS</a>
+        <a href="#simulator" class="hover:text-[#2ec4b6] transition-colors">04 / SIMULATOR</a>
+        <a href="#specs" class="hover:text-[#2ec4b6] transition-colors">05 / SPECS</a>
+      </nav>
+
+      <!-- Action Button Group -->
+      <div class="flex items-center gap-3">
+        <a href="https://www.linkedin.com/in/gregmeade/" target="_blank" rel="noopener" class="js-linkedin-link hidden sm:inline-flex items-center gap-1.5 font-mono text-xs text-[#94a3b8] hover:text-[#2ec4b6] px-3 py-1.5 transition-colors">
+          <span>LINKEDIN</span>
+          <span class="text-[#2ec4b6]">&nearr;</span>
+        </a>
+        <a href="mailto:founder@starlingquant.com" class="js-email-link btn-pill btn-pill-primary">
+          <span>TRANSMIT</span>
+          <span>&rarr;</span>
+        </a>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- ============================================================== -->
+  <!-- HERO SECTION WITH BREATHING 3D PARTICLES SPHERE                -->
+  <!-- ============================================================== -->
+  <section class="relative min-h-screen flex items-center justify-center pt-28 pb-20 px-6 md:px-12 overflow-hidden">
+    
+    <!-- 3D Breathing Particle Sphere Canvas (Parallaxes on scroll) -->
+    <div class="hero-canvas-wrap">
+      <canvas id="sphereCanvas" class="w-full h-full"></canvas>
+    </div>
+
+    <!-- Hero Content -->
+    <div class="relative z-10 max-w-5xl mx-auto text-center space-y-8">
+      
+      <!-- Brand Logo Emblem -->
+      <div class="flex flex-col items-center justify-center reveal-on-scroll is-revealed">
+        <div class="p-3 rounded-2xl bg-[#0a1220]/80 border border-[#142136] backdrop-blur-md shadow-2xl mb-4">
+          <img src="./assets/logo-mark.png" alt="Starling Quantitative Swarm Network" class="h-14 md:h-16 w-auto drop-shadow-[0_0_24px_rgba(46,196,182,0.4)]">
+        </div>
+        <!-- Telemetry Badge -->
+        <div class="inline-flex items-center gap-3 px-4 py-1.5 rounded-full bg-[#0a1220] border border-[#142136] font-mono text-xs text-[#2ec4b6] tracking-wider">
+          <span class="w-2 h-2 rounded-full bg-[#2ec4b6] animate-pulse"></span>
+          <span>MULTI-AGENT SWARM ACTIVE</span>
+          <span class="text-[#64748b]">//</span>
+          <span class="text-[#94a3b8]">DMA ROUTING ONLINE</span>
+        </div>
+      </div>
+
+      <!-- Main Headline -->
+      <h1 class="h-hero text-[#f8fafc] tracking-tight reveal-on-scroll is-revealed font-display">
+        FROM MARKET NOISE<br>
+        <span class="font-editorial italic font-normal text-[#2ec4b6]">TO MATHEMATICAL CONSENSUS.</span>
+      </h1>
+
+      <!-- Lead Description -->
+      <p class="lead-text max-w-2xl mx-auto text-[#94a3b8] reveal-on-scroll is-revealed">
+        Starling Quantitative is an autonomous quantitative trading swarm. Like a starling murmuration, we coordinate specialized AI agents to uncover market dislocations, stress-test trade hypotheses, and execute across venues with deterministic risk controls.
+      </p>
+
+      <!-- Action Group -->
+      <div class="flex flex-wrap justify-center gap-4 pt-4 reveal-on-scroll is-revealed">
+        <a href="#architecture" class="btn-pill btn-pill-primary">
+          <span>EXPLORE ARCHITECTURE</span>
+          <span>&darr;</span>
+        </a>
+        <a href="#simulator" class="btn-pill btn-pill-secondary">
+          <span>LIVE SIMULATOR</span>
+        </a>
+      </div>
+
+      <!-- ============================================================ -->
+      <!-- RADICAL TRANSPARENCY // LIVE PERFORMANCE COCKPIT            -->
+      <!-- ============================================================ -->
+      <!-- ============================================================ -->
+      <!-- RADICAL TRANSPARENCY // LIVE PERFORMANCE COCKPIT            -->
+      <!-- ============================================================ -->
+      <div id="performance" class="pt-10 w-full max-w-5xl mx-auto space-y-4 text-left reveal-on-scroll is-revealed border-t border-[#142136]/80">
+        
+        <!-- Header Strip -->
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 px-1 pt-2">
+          <div class="flex items-center gap-2.5 font-mono text-xs text-[#2ec4b6] tracking-wider">
+            <span class="w-2 h-2 rounded-full bg-[#2ec4b6] animate-pulse"></span>
+            <span class="font-bold uppercase">RADICAL TRANSPARENCY // PRODUCTION TELEMETRY</span>
+          </div>
+          <div class="flex items-center gap-2 font-mono text-[11px] text-[#94a3b8]">
+            <span class="text-[#64748b]">DMA AUDIT:</span>
+            <span class="px-2 py-0.5 rounded bg-[#0a1220] border border-[#142136] text-[#2ec4b6] font-semibold">T+0 SETTLED</span>
+            <span id="metricLiveClock" class="text-[#64748b]">--:--:-- UTC</span>
+          </div>
+        </div>
+
+        <!-- 4 Core Performance Boxes -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          
+          <!-- Box 1: Total Trades Executed -->
+          <div class="metric-box p-5 space-y-3">
+            <div class="flex items-center justify-between font-mono text-xs">
+              <span class="text-[#94a3b8] uppercase tracking-wider">VERIFIED EXECUTIONS</span>
+              <span class="badge-pill bg-[#2ec4b6]/10 text-[#2ec4b6] border border-[#2ec4b6]/30">
+                <span class="w-1.5 h-1.5 rounded-full bg-[#2ec4b6] animate-ping"></span>
+                LIVE DMA
+              </span>
+            </div>
+            <div>
+              <div id="metricTotalTrades" class="metric-number text-[#f8fafc]">1,428</div>
+              <div class="text-[11px] font-mono text-[#2ec4b6] mt-1 flex items-center gap-1">
+                <span id="metricTradeIncrement">Continuous multi-venue order fills &bull; T+0 DMA</span>
+              </div>
+            </div>
+            <div class="pt-2 border-t border-[#142136]/80 text-[11px] font-mono text-[#64748b] leading-relaxed">
+              Cross-venue routing across Kalshi & Polymarket
+            </div>
+          </div>
+
+          <!-- Box 2: Cumulative Net Alpha -->
+          <div class="metric-box p-5 space-y-3">
+            <div class="flex items-center justify-between font-mono text-xs">
+              <span class="text-[#94a3b8] uppercase tracking-wider">CUMULATIVE ALPHA</span>
+              <span class="badge-pill bg-[#2563eb]/20 text-[#38bdf8] border border-[#2563eb]/40">
+                NET α
+              </span>
+            </div>
+            <div>
+              <div id="metricCumulativeAlpha" class="metric-number text-[#f8fafc]">+14.8%</div>
+              <div class="text-[11px] font-mono text-[#38bdf8] mt-1">
+                <span>Net of taker fees, gas & slippage</span>
+              </div>
+            </div>
+            <div class="pt-2 border-t border-[#142136]/80 text-[11px] font-mono text-[#64748b] leading-relaxed">
+              Synthesized cross-arbitrage & Bayesian market making
+            </div>
+          </div>
+
+          <!-- Box 3: Performance vs SPY (S&P 500) -->
+          <div class="metric-box p-5 space-y-3 border-[#2ec4b6]/30 bg-[#0a1626]">
+            <div class="flex items-center justify-between font-mono text-xs">
+              <span class="text-[#94a3b8] uppercase tracking-wider">VS. S&P 500 (SPY)</span>
+              <span class="badge-pill bg-[#2ec4b6]/15 text-[#2ec4b6] border border-[#2ec4b6]/30">
+                BENCHMARK
+              </span>
+            </div>
+            <div>
+              <div id="metricVsSpy" class="metric-number text-[#2ec4b6]">+12.4%</div>
+              <div class="text-[11px] font-mono text-[#cbd5e1] mt-1 flex items-center gap-1.5">
+                <span id="metricSpySub" class="text-[#f8fafc] font-bold">2.4x</span> <span>SPY Benchmark Return</span>
+              </div>
+            </div>
+            <div class="pt-2 border-t border-[#142136]/80 text-[11px] font-mono text-[#64748b] leading-relaxed">
+              Market-Neutral Beta &bull; Zero systemic correlation
+            </div>
+          </div>
+
+          <!-- Box 4: Risk-Adjusted Stability (Sharpe & Drawdown) -->
+          <div class="metric-box p-5 space-y-3">
+            <div class="flex items-center justify-between font-mono text-xs">
+              <span class="text-[#94a3b8] uppercase tracking-wider">SHARPE RATIO</span>
+              <span class="badge-pill bg-[#0f172a] text-[#cbd5e1] border border-[#1e293b]">
+                MAX DD: -2.8%
+              </span>
+            </div>
+            <div>
+              <div id="metricSharpeRatio" class="metric-number text-[#f8fafc]">1.84</div>
+              <div class="text-[11px] font-mono text-[#94a3b8] mt-1">
+                <span>Sortino: 2.20 &bull; Brier: 0.15</span>
+              </div>
+            </div>
+            <div class="pt-2 border-t border-[#142136]/80 text-[11px] font-mono text-[#64748b] leading-relaxed">
+              Deterministic risk circuits & automated hedging
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Comparative Return Sparkline & Transparency Attestation -->
+        <div class="p-4 rounded-xl bg-[#0a1220]/70 border border-[#142136] flex flex-col md:flex-row items-start md:items-center justify-between gap-4 font-mono text-xs">
+          <div class="space-y-1">
+            <div class="text-[#cbd5e1] font-bold flex items-center gap-2">
+              <span class="w-1.5 h-1.5 rounded-full bg-[#2ec4b6]"></span>
+              <span>VERIFIED FORWARD TELEMETRY // DMA EXECUTION LEDGER</span>
+            </div>
+            <div class="text-[11px] text-[#94a3b8]">
+              All performance metrics reflect live and paper executions across Kalshi and Polymarket order books. Reconciled against the SQLite flight recorder and settled daily at market close.
+            </div>
+          </div>
+          
+          <!-- End-of-day automation tag -->
+          <div class="flex items-center gap-2 px-3 py-1.5 rounded bg-[#060b14] border border-[#142136] text-[11px] font-mono text-[#94a3b8] whitespace-nowrap">
+            <span class="w-1.5 h-1.5 rounded-full bg-[#2ec4b6]"></span>
+            <span>DAILY SETTLEMENT: 16:30 EDT</span>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ============================================================== -->
+  <!-- MAIN EDITORIAL NARRATIVE (Asymmetric 2-Column Grid)            -->
+  <!-- ============================================================== -->
+  <main class="max-w-7xl mx-auto px-6 md:px-12 space-y-12">
+
+    <!-- ============================================================ -->
+    <!-- SECTION 01: THE PHILOSOPHY & CORE PROBLEM                     -->
+    <!-- ============================================================ -->
+    <section id="philosophy" class="sec-grid">
+      
+      <!-- Left Column: Sticky Label -->
+      <div class="sec-label-col">
+        <span class="sec-tag">01 / PHILOSOPHY</span>
+        <h3 class="font-display text-xl font-bold text-[#f8fafc] mt-3">The Fallacy of Monolithic AI in Financial Markets</h3>
+      </div>
+
+      <!-- Right Column: Narrative Story -->
+      <div class="space-y-8">
+        
+        <div class="space-y-4">
+          <h2 class="h-xl">Single Models Hallucinate.<br><span class="text-[#2ec4b6] font-editorial italic font-normal">Swarms Converge.</span></h2>
+          <p class="lead-text">
+            Single AI models fail in volatile financial markets. When a single model tries to ingest data, evaluate risk, and place orders within a single prompt loop, early reasoning errors compound into catastrophic trade executions.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 pt-4">
+          
+          <div class="surface-card p-6 md:p-8 space-y-4">
+            <div class="font-mono text-xs text-[#64748b] uppercase tracking-wider">// MONOLITHIC FRAGILITY</div>
+            <h4 class="h-lg text-[#f8fafc]">The Latency & Reasoning Bottleneck</h4>
+            <p class="text-sm text-[#94a3b8] leading-relaxed">
+              Burdening a single model with order book depth, volatility pricing, and trade execution spikes inference latency past 800ms. In fast-moving markets, that delay erodes your edge and turns profitable signals into adverse selection.
+            </p>
+          </div>
+
+          <div class="surface-card p-6 md:p-8 space-y-4 border-[#2563eb]/40 bg-[#0d1728]">
+            <div class="font-mono text-xs text-[#2ec4b6] uppercase tracking-wider">// THE STARLING MURMURATION THESIS</div>
+            <h4 class="h-lg text-[#f8fafc]">Adversarial Agent Consensus</h4>
+            <p class="text-sm text-[#94a3b8] leading-relaxed">
+              Starling Quantitative separates trading into specialized roles. Lightweight agents independently identify pricing dislocations, while an adversarial risk group actively tries to invalidate every trade proposal before any capital is committed.
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- ============================================================ -->
+    <!-- SECTION 02: CLOUD SWARM TRADING ARCHITECTURE                  -->
+    <!-- ============================================================ -->
+    <section id="architecture" class="sec-grid">
+      
+      <!-- Left Column: Sticky Label -->
+      <div class="sec-label-col">
+        <span class="sec-tag">02 / ARCHITECTURE</span>
+        <h3 class="font-display text-xl font-bold text-[#f8fafc] mt-3">Distributed Multi-Tier Cloud Topology</h3>
+      </div>
+
+      <!-- Right Column: Narrative & Architecture Tiers -->
+      <div class="space-y-8">
+        
+        <div class="space-y-4">
+          <h2 class="h-xl">Separation of Concerns.<br><span class="font-editorial italic font-normal text-[#2ec4b6]">From Raw Signal to Direct Market Access.</span></h2>
+          <p class="lead-text">
+            Our trading architecture isolates strategy ideation, risk management, and order routing into three distinct operational layers. No individual model has direct access to deploy capital without independent quorum verification.
+          </p>
+        </div>
+
+        <!-- Architecture Tiers (Stacked 3-Card Layout) -->
+        <div class="space-y-4 pt-2">
+
+          <!-- Tier 1 -->
+          <div class="surface-card p-6 md:p-8 flex flex-col md:flex-row gap-6 items-start md:items-center justify-between">
+            <div class="space-y-2 max-w-xl">
+              <div class="font-mono text-xs text-[#2ec4b6]">TIER 01 // MARKET SENSING LAYER</div>
+              <h4 class="text-xl font-bold font-display text-[#f8fafc]">Real-Time Data Ingestion</h4>
+              <p class="text-sm text-[#94a3b8] leading-relaxed">
+                Dedicated micro-agents stream order book depth, cross-venue pricing gaps, and liquidity changes across exchange APIs in continuous sub-second loops.
+              </p>
+            </div>
+            <div class="font-mono text-xs text-right text-[#cbd5e1] bg-[#0d1728] px-4 py-2 rounded-lg border border-[#142136] whitespace-nowrap">
+              <span>STREAMING DATA INGESTION</span>
+            </div>
+          </div>
+
+          <!-- Tier 2 -->
+          <div class="surface-card p-6 md:p-8 flex flex-col md:flex-row gap-6 items-start md:items-center justify-between">
+            <div class="space-y-2 max-w-xl">
+              <div class="font-mono text-xs text-[#2ec4b6]">TIER 02 // ADVERSARIAL STRATEGY QUORUM</div>
+              <h4 class="text-xl font-bold font-display text-[#f8fafc]">Multi-Agent Hypothesis Testing</h4>
+              <p class="text-sm text-[#94a3b8] leading-relaxed">
+                When an agent detects a pricing anomaly, independent counter-agents immediately challenge the thesis—evaluating fee drag, book depth, and adverse selection before voting.
+              </p>
+            </div>
+            <div class="font-mono text-xs text-right text-[#cbd5e1] bg-[#0d1728] px-4 py-2 rounded-lg border border-[#142136] whitespace-nowrap">
+              <span>MULTI-AGENT ARBITRATION</span>
+            </div>
+          </div>
+
+          <!-- Tier 3 -->
+          <div class="surface-card p-6 md:p-8 flex flex-col md:flex-row gap-6 items-start md:items-center justify-between border-[#2563eb]/40">
+            <div class="space-y-2 max-w-xl">
+              <div class="font-mono text-xs text-[#2ec4b6]">TIER 03 // RISK GATES & EXECUTION</div>
+              <h4 class="text-xl font-bold font-display text-[#f8fafc]">Deterministic Risk Controls</h4>
+              <p class="text-sm text-[#94a3b8] leading-relaxed">
+                Quorum leader nodes enforce hard risk limits—maximum drawdown ceilings, capital exposure caps, and inventory balancing—before dispatching orders to exchange matching engines.
+              </p>
+            </div>
+            <div class="font-mono text-xs text-right text-[#2ec4b6] bg-[#2563eb]/20 px-4 py-2 rounded-lg border border-[#2ec4b6]/40 whitespace-nowrap shadow-[0_0_15px_rgba(46,196,182,0.2)]">
+              <span>STRICT RISK LOCKS</span>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- ============================================================ -->
+    <!-- SECTION 03: MULTI-AGENT CONSENSUS PIPELINE                    -->
+    <!-- ============================================================ -->
+    <section id="consensus" class="sec-grid">
+      
+      <!-- Left Column: Sticky Label -->
+      <div class="sec-label-col">
+        <span class="sec-tag">03 / CONSENSUS ENGINE</span>
+        <h3 class="font-display text-xl font-bold text-[#f8fafc] mt-3">The 4-Step Verification Quorum</h3>
+      </div>
+
+      <!-- Right Column: Sequential Pipeline -->
+      <div class="space-y-8">
+        
+        <div class="space-y-4">
+          <h2 class="h-xl">Distributed Consensus Meets<br><span class="font-editorial italic font-normal text-[#2ec4b6]">Hard Risk Controls.</span></h2>
+          <p class="lead-text">
+            How a trade idea travels from market anomaly to verified execution in milliseconds—without emotional bias or human latency.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 pt-4">
+          
+          <div class="surface-card p-6 md:p-8 space-y-3">
+            <div class="font-mono text-xs text-[#2ec4b6]">STEP 01 // DETECTION</div>
+            <h4 class="text-lg font-bold text-[#f8fafc]">Opportunity Discovery</h4>
+            <p class="text-xs text-[#94a3b8] leading-relaxed">
+              Ingestion agents scan order books to identify cross-venue spreads, mispriced event probabilities, and structural arbitrage across venue pairs.
+            </p>
+          </div>
+
+          <div class="surface-card p-6 md:p-8 space-y-3">
+            <div class="font-mono text-xs text-[#2ec4b6]">STEP 02 // VALIDATION</div>
+            <h4 class="text-lg font-bold text-[#f8fafc]">Adversarial Stress-Testing</h4>
+            <p class="text-xs text-[#94a3b8] leading-relaxed">
+              Independent audit agents evaluate the candidate trade against historical edge, available liquidity depth, and worst-case taker fee slippage.
+            </p>
+          </div>
+
+          <div class="surface-card p-6 md:p-8 space-y-3">
+            <div class="font-mono text-xs text-[#2ec4b6]">STEP 03 // CONSENSUS</div>
+            <h4 class="text-lg font-bold text-[#f8fafc]">Multi-Node Risk Quorum</h4>
+            <p class="text-xs text-[#94a3b8] leading-relaxed">
+              Execution requires a two-thirds majority across independent risk nodes. If capital exposure or drawdown thresholds are exceeded, the trade is rejected immediately.
+            </p>
+          </div>
+
+          <div class="surface-card p-6 md:p-8 space-y-3 border-[#2563eb]/40 bg-[#0d1728]">
+            <div class="font-mono text-xs text-[#2ec4b6]">STEP 04 // EXECUTION</div>
+            <h4 class="text-lg font-bold text-[#f8fafc]">Low-Latency Order Routing</h4>
+            <p class="text-xs text-[#94a3b8] leading-relaxed">
+              Approved trades are routed directly to exchange order books via low-latency connectors. Position ledgers and hedge states update simultaneously.
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- ============================================================ -->
+    <!-- SECTION 04: INTERACTIVE SWARM SIMULATOR                       -->
+    <!-- ============================================================ -->
+    <section id="simulator" class="sec-grid">
+      
+      <!-- Left Column: Sticky Label -->
+      <div class="sec-label-col">
+        <span class="sec-tag">04 / LIVE SIMULATOR</span>
+        <h3 class="font-display text-xl font-bold text-[#f8fafc] mt-3">Real-Time Swarm Arbitration Console</h3>
+      </div>
+
+      <!-- Right Column: Interactive Canvas & Telemetry Stream -->
+      <div class="space-y-6">
+        
+        <div class="space-y-4">
+          <h2 class="h-xl">Inspect Swarm Consensus<br><span class="font-editorial italic font-normal text-[#2ec4b6]">In Dynamic Real Time.</span></h2>
+          <p class="lead-text">
+            See how our multi-agent quorum responds to volatility in real time. Simulate a market dislocation to observe how agents challenge proposals and protect capital.
+          </p>
+        </div>
+
+        <!-- Simulator Container -->
+        <div class="surface-card p-6 border-[#142136] overflow-hidden space-y-4 bg-[#0a1220]">
+          
+          <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between pb-3 border-b border-[#142136] gap-3">
+            <div class="flex items-center gap-2 font-mono text-xs text-[#94a3b8]">
+              <span class="w-2 h-2 rounded-full bg-[#2ec4b6] animate-ping"></span>
+              <span>LIVE_TOPOLOGY // MULTI-AGENT SWARM MESH</span>
+            </div>
+            
+            <button id="btnInjectShock" class="btn-pill btn-pill-primary text-xs py-1.5 px-4">
+              <span>INJECT VOLATILITY SHOCK</span>
+              <span class="text-[#2ec4b6]">&uarr;</span>
+            </button>
+          </div>
+
+          <!-- Canvas Preview -->
+          <div class="relative w-full rounded-lg overflow-hidden border border-[#142136] bg-[#060b14]">
+            <canvas id="simCanvas" class="w-full h-80 block"></canvas>
+          </div>
+
+          <!-- Live Terminal Output -->
+          <div class="p-3 bg-black/60 rounded-lg border border-[#142136] space-y-1">
+            <div class="font-mono text-[10px] text-[#64748b] uppercase tracking-wider">// REAL-TIME CONSENSUS TELEMETRY STREAM</div>
+            <div id="simLogs" class="space-y-1 font-mono text-xs">
+              <div class="text-[11px] text-[#94a3b8]">[12:44:02.102] <span class="text-[#2ec4b6]">CONSENSUS_PULSE:</span> All risk nodes synced. Continuous spread tracking active.</div>
+              <div class="text-[11px] text-[#94a3b8]">[12:44:02.390] <span class="text-[#f8fafc]">RISK_GATE:</span> Portfolio delta within bounds. 5 active strategies hedged.</div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- ============================================================ -->
+    <!-- SECTION 05: TECHNICAL SPECIFICATIONS & BENCHMARKS             -->
+    <!-- ============================================================ -->
+    <section id="specs" class="sec-grid">
+      
+      <!-- Left Column: Sticky Label -->
+      <div class="sec-label-col">
+        <span class="sec-tag">05 / SPECIFICATIONS</span>
+        <h3 class="font-display text-xl font-bold text-[#f8fafc] mt-3">Low-Level Infrastructure Primitives</h3>
+      </div>
+
+      <!-- Right Column: Specs Matrix -->
+      <div class="space-y-8">
+        
+        <div class="space-y-4">
+          <h2 class="h-xl">Engineered for Sub-Millisecond<br><span class="font-editorial italic font-normal text-[#2ec4b6]">Deterministic Execution.</span></h2>
+          <p class="lead-text">
+            Engineered for high-throughput, low-latency execution with zero garbage collection pauses and deterministic order routing.
+          </p>
+        </div>
+
+        <div class="surface-card divide-y divide-[#142136] overflow-hidden font-mono text-xs">
+          
+          <div class="p-5 flex flex-col sm:flex-row justify-between gap-2 items-start sm:items-center">
+            <span class="text-[#64748b] uppercase">Execution Pipeline</span>
+            <span class="text-[#f8fafc] font-bold">Python 3.11 & Rust (AsyncIO / Low-Overhead Routing)</span>
+          </div>
+
+          <div class="p-5 flex flex-col sm:flex-row justify-between gap-2 items-start sm:items-center">
+            <span class="text-[#64748b] uppercase">Consensus Architecture</span>
+            <span class="text-[#f8fafc] font-bold">Asynchronous Raft Quorum (Two-Thirds Majority Lock)</span>
+          </div>
+
+          <div class="p-5 flex flex-col sm:flex-row justify-between gap-2 items-start sm:items-center">
+            <span class="text-[#64748b] uppercase">Tick-To-Execution</span>
+            <span class="text-[#2ec4b6] font-bold">8.4 ms (95th Percentile DMA API Routing)</span>
+          </div>
+
+          <div class="p-5 flex flex-col sm:flex-row justify-between gap-2 items-start sm:items-center">
+            <span class="text-[#64748b] uppercase">Venue Coverage</span>
+            <span class="text-[#f8fafc] font-bold">Prediction Markets & Event Derivatives (Kalshi, Polymarket)</span>
+          </div>
+
+          <div class="p-5 flex flex-col sm:flex-row justify-between gap-2 items-start sm:items-center">
+            <span class="text-[#64748b] uppercase">Risk Controls</span>
+            <span class="text-[#f8fafc] font-bold">Hard Drawdown Stops, Exposure Caps & Delta Hedging</span>
+          </div>
+
+          <div class="p-5 flex flex-col sm:flex-row justify-between gap-2 items-start sm:items-center">
+            <span class="text-[#64748b] uppercase">Audit Ledger</span>
+            <span class="text-[#f8fafc] font-bold">Dual-Entry SQLite Flight Recorder (Daily EOD Reconciliation)</span>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- ============================================================ -->
+    <!-- SECTION 06: TRANSMISSION / FOUNDER CONTACT                    -->
+    <!-- ============================================================ -->
+    <section id="contact" class="sec-grid border-b border-[#142136]">
+      
+      <!-- Left Column: Sticky Label -->
+      <div class="sec-label-col">
+        <span class="sec-tag">06 / TRANSMISSION</span>
+        <h3 class="font-display text-xl font-bold text-[#f8fafc] mt-3">Direct Inquiries & Collaboration</h3>
+      </div>
+
+      <!-- Right Column: Editorial Contact Monograph -->
+      <div class="space-y-8">
+        
+        <div class="space-y-4">
+          <h2 class="h-xl font-editorial italic font-normal text-[#cbd5e1]">
+            Connect with the <span class="text-[#f8fafc] not-italic font-display font-bold">Team.</span>
+          </h2>
+          <p class="lead-text">
+            Starling Quantitative combines multi-agent AI, probabilistic forecasting, and automated execution to capture persistent alpha across event and prediction markets.
+          </p>
+        </div>
+
+        <!-- Contact Box -->
+        <div class="surface-card p-8 md:p-12 space-y-8 border-[#2563eb]/40 bg-[#0a1220]">
+          
+          <div class="flex flex-col md:flex-row gap-6 items-start md:items-center justify-between pb-6 border-b border-[#142136]">
+            <div>
+              <div class="font-mono text-xs text-[#2ec4b6] uppercase tracking-wider">// FOUNDER & ARCHITECT</div>
+              <h4 class="text-2xl md:text-3xl font-bold font-display text-[#f8fafc] mt-1">Greg Meade</h4>
+              <p class="text-sm text-[#94a3b8] leading-relaxed pt-1">
+                Founder & Quantitative Systems Architect &bull; Autonomous Trading Systems &bull; Cloud Infrastructure
+              </p>
+            </div>
+            <a href="https://www.linkedin.com/in/gregmeade/" target="_blank" rel="noopener" class="js-linkedin-link btn-pill btn-pill-secondary">
+              <span>CONNECT ON LINKEDIN</span>
+              <span class="text-[#2ec4b6]">&nearr;</span>
+            </a>
+          </div>
+
+          <div class="space-y-4">
+            <h5 class="text-lg font-bold font-display text-[#f8fafc]">Let's discuss market making, API integration, and multi-agent trading systems.</h5>
+            <p class="text-sm text-[#94a3b8] leading-relaxed">
+              We are actively collaborating with prediction market platforms, quantitative trading desks, and liquidity providers. Whether you are exploring strategic partnerships or API access, direct inquiries are welcome.
+            </p>
+
+            <!-- Contact Buttons -->
+            <div class="flex flex-wrap gap-4 pt-2">
+              <a href="mailto:founder@starlingquant.com" class="js-email-link btn-pill btn-pill-primary">
+                <span>TRANSMIT // EMAIL GREG</span>
+                <span>&rarr;</span>
+              </a>
+              <a href="https://www.linkedin.com/in/gregmeade/" class="js-linkedin-link btn-pill btn-pill-secondary" target="_blank" rel="noopener">
+                <span>LINKEDIN: /in/gregmeade</span>
+                <span class="text-[#2ec4b6]">&nearr;</span>
+              </a>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- ============================================================== -->
+  <!-- SITE FOOTER                                                    -->
+  <!-- ============================================================== -->
+  <footer class="max-w-7xl mx-auto px-6 md:px-12 py-16 flex flex-col md:flex-row items-center justify-between gap-6 font-mono text-xs text-[#64748b]">
+    <div class="flex items-center gap-3">
+      <img src="./assets/logo-mark.png" alt="Starling Quantitative" class="h-6 w-auto opacity-70">
+      <span>&copy; 2026 STARLING QUANTITATIVE // A BIWADA COMPANY</span>
+    </div>
+    <div class="flex items-center gap-6 text-[#94a3b8]">
+      <span class="flex items-center gap-2">
+        <span class="w-1.5 h-1.5 rounded-full bg-[#2ec4b6]"></span>
+        <span>ALL CLOUD MESH NODES OPERATIONAL</span>
+      </span>
+      <a href="https://www.linkedin.com/in/gregmeade/" target="_blank" rel="noopener" class="hover:text-[#2ec4b6] transition-colors">LINKEDIN &nearr;</a>
+      <a href="#sphereCanvas" class="hover:text-[#2ec4b6] transition-colors">TOP &uarr;</a>
+    </div>
+  </footer>
+
+  <!-- Main Orchestration Script -->
+  <script type="module" src="./js/app.js"></script>
+</body>
+</html>
