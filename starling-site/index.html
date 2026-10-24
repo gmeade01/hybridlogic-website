@@ -647,5 +647,42 @@
 
   <!-- Main Orchestration Script -->
   <script type="module" src="./js/app.js"></script>
+  <!-- Biwada 24/7 Edge Telemetry (Cookie-Free D1 Funnel) -->
+  <script>
+    (function () {
+      var sid = '';
+      try {
+        sid = sessionStorage.getItem('biwada_sid') || (Math.random().toString(36).slice(2) + Date.now().toString(36));
+        sessionStorage.setItem('biwada_sid', sid);
+      } catch (_) {}
+      function emit(eventName, meta) {
+        try {
+          var body = JSON.stringify({
+            projectId: 'bu01_starling',
+            unit: 'bu01_starling',
+            eventName: eventName,
+            sessionId: sid,
+            url: location.href,
+            referrer: document.referrer || '',
+            meta: meta || {}
+          });
+          if (navigator.sendBeacon) {
+            navigator.sendBeacon('https://api.biwada.com/event', new Blob([body], { type: 'application/json' }));
+          } else {
+            fetch('https://api.biwada.com/event', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: body, keepalive: true }).catch(function () {});
+          }
+        } catch (_) {}
+      }
+      emit('page_view');
+      document.addEventListener('click', function (e) {
+        var a = e.target && e.target.closest ? e.target.closest('a[href]') : null;
+        if (!a) return;
+        var href = a.getAttribute('href') || '';
+        if (href.indexOf('mailto:') === 0 || href.indexOf('linkedin.com') !== -1) {
+          emit('contact_click', { href: href });
+        }
+      });
+    })();
+  </script>
 </body>
 </html>
